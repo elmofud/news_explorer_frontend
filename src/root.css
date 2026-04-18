@@ -17,6 +17,7 @@
   /* Border & Divider Color */
   --border-gray: #d1d2d6;
   --border-white: #ffffff;
+  --border-white-transparent: #ffffff33;
 
   /* Other Colors */
   --icon-dark: #191717;
@@ -26,8 +27,8 @@
   --black: #000000;
 
   /* Button States */
-  --btn-blue: #f71e5;
-  --btn-dsiabled: #e6e8eb;
+  --btn-blue: #2f71e5;
+  --btn-disabled: #e6e8eb;
   --btn-blue-active: #2a65cc;
   --btn-white-hover: #e8e8e8;
 }
