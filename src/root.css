@@ -1,0 +1,33 @@
+:root {
+  /* Primary Colors */
+  --primary-blue: #2f71e5;
+  --primary-dark: #1a1b22;
+  --primary-blue-active: #2a65cc;
+
+  /* Text Colors */
+  --text-primary: #1a1b22;
+  --text-secondary: #b6bcbf;
+  --text-white: #ffffff;
+
+  /* Background Colors */
+  --bg-white: #ffffff;
+  --bg-light: #f5f6f7;
+  --bg-gray: #c4c4c4;
+
+  /* Border & Divider Color */
+  --border-gray: #d1d2d6;
+  --border-white: #ffffff;
+
+  /* Other Colors */
+  --icon-dark: #191717;
+  --avatar-placeholder: #949494;
+  --shadow-dark: #081d2d;
+  --shadow-button: #0e1a39;
+  --black: #000000;
+
+  /* Button States */
+  --btn-blue: #f71e5;
+  --btn-dsiabled: #e6e8eb;
+  --btn-blue-active: #2a65cc;
+  --btn-white-hover: #e8e8e8;
+}
