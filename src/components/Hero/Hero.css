@@ -1,0 +1,62 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  height: 576px;
+
+  text-align: left;
+  padding: 80px 416px;
+
+  background-image: url("../../images/bg-hero.svg");
+}
+
+.hero__title {
+  font-family: "Roboto Slab";
+  font-weight: 400;
+  font-size: 60px;
+  color: var(--text-white);
+  margin: 0 0 32px;
+}
+
+.hero__subtitle {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--text-white);
+  margin: 0 0 88px;
+}
+
+.hero__search-form {
+  display: flex;
+  background: var(--bg-white);
+  border-radius: 100px;
+  border: 1px solid var(--border-search-btn);
+  width: 680ox;
+  height: 64px;
+  top: 432px;
+  left: 416px;
+  opacity: 1;
+}
+
+.hero__input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text-secondary);
+  padding: 21px 0 21px 24px;
+}
+
+.hero__button {
+  width: 168px;
+  height: 64px;
+  border-radius: 100px;
+  border: none;
+  background-color: var(--btn-blue);
+  color: var(--text-white);
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  padding: 0 12px;
+}
