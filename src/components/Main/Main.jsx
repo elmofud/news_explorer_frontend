@@ -1,5 +1,5 @@
+import AboutSection from "../AboutSection/AboutSection.jsx";
 import NewsCardList from "../NewsCardList/NewsCardList.jsx";
-import avatar from "../../images/image-03.png";
 import "./Main.css";
 
 const Main = ({ searchResults, isSearch }) => {
@@ -14,13 +14,7 @@ const Main = ({ searchResults, isSearch }) => {
           </button>
         </section>
       )}
-      <section className="about-author">
-        <img src={avatar} alt="avatar" />
-        <h1 className="about-author__title">About the author</h1>
-        <p className="about-author__description">
-          This block describes the project author
-        </p>
-      </section>
+      <AboutSection />
     </div>
   );
 };
