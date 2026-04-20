@@ -1,7 +1,7 @@
 import closeButton from "../../assets/closeButton.svg";
 import "./Popup.css";
 
-const Popup = ({ children, buttonText, onClose }) => {
+const Popup = ({ children, buttonText, onClose, alternateButton, title }) => {
   return (
     <div className="modal">
       <button className="modal__close-button" type="button" onClick={onClose}>
@@ -11,11 +11,13 @@ const Popup = ({ children, buttonText, onClose }) => {
           className="modal__close-button-image"
         />
       </button>
+      <h2 className="modal__title">{title}</h2>
       <form className="modal__form">
         {children}
         <button className="modal__submit" type="submit">
           {buttonText}
         </button>
+        {alternateButton}
       </form>
     </div>
   );
