@@ -1,7 +1,7 @@
 import closeButton from "../../assets/closeButton.svg";
 import "./Popup.css";
 
-const Popup = ({ childern, buttonText, onClose }) => {
+const Popup = ({ children, buttonText, onClose }) => {
   return (
     <div className="modal">
       <button className="modal__close-button" type="button" onClick={onClose}>
