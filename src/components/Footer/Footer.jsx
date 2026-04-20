@@ -1,5 +1,5 @@
-import linkedin from "../../images/linkedin.svg";
-import github from "../../images/github.svg";
+import linkedin from "../../images/linkedin-icon.svg";
+import github from "../../images/github-icon.svg";
 
 import "./Footer.css";
 
@@ -18,10 +18,10 @@ const Footer = () => {
         </div>
         <div className="footer__icons">
           <a className="footer__icon" href="#">
-            <img src={linkedin} alt="linkedin" />
+            <img src={linkedin} alt="linkedin" className="footer__icon-image" />
           </a>
           <a className="footer__icon" href="#">
-            <img src={github} alt="github" />
+            <img src={github} alt="github" className="footer__icon-image" />
           </a>
         </div>
       </nav>
