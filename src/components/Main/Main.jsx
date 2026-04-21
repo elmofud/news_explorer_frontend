@@ -1,4 +1,4 @@
-import AboutSection from "../AboutSection/AboutSection.jsx";
+import About from "../About/About.jsx";
 import NewsCardList from "../NewsCardList/NewsCardList.jsx";
 import "./Main.css";
 
@@ -14,7 +14,7 @@ const Main = ({ searchResults, isSearch }) => {
           </button>
         </section>
       )}
-      <AboutSection />
+      <About />
     </div>
   );
 };

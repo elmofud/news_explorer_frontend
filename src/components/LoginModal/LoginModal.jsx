@@ -1,4 +1,4 @@
-import Popup from "../Popup/Popup.jsx";
+import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 import "./LoginModal.css";
 
 const LoginModal = ({
@@ -9,7 +9,7 @@ const LoginModal = ({
   onRegisterClick,
 }) => {
   return (
-    <Popup
+    <ModalWithForm
       title="Sign in"
       buttonText={buttonText}
       isOpen={isOpen}
@@ -46,7 +46,7 @@ const LoginModal = ({
           name="password"
         />
       </label>
-    </Popup>
+    </ModalWithForm>
   );
 };
 

@@ -1,7 +1,13 @@
 import closeButton from "../../assets/closeButton.svg";
-import "./Popup.css";
+import "./ModalWithForm.css";
 
-const Popup = ({ children, buttonText, onClose, alternateButton, title }) => {
+const ModalWithForm = ({
+  children,
+  buttonText,
+  onClose,
+  alternateButton,
+  title,
+}) => {
   return (
     <div className="modal">
       <button className="modal__close-button" type="button" onClick={onClose}>
@@ -23,4 +29,4 @@ const Popup = ({ children, buttonText, onClose, alternateButton, title }) => {
   );
 };
 
-export default Popup;
+export default ModalWithForm;

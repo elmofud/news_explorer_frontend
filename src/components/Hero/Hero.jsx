@@ -1,8 +1,9 @@
 import heroBackground from "../../images/bg-hero.svg";
+import SearchForm from "../SearchForm/SearchForm.jsx";
 
 import "./Hero.css";
 
-function Hero() {
+const Hero = () => {
   return (
     <section className="hero">
       <h1 className="hero__title">What's going on in the world?</h1>
@@ -10,18 +11,9 @@ function Hero() {
         Find the latest news on any topic and save them in your personal
         account.
       </p>
-      <form className="hero__search-form">
-        <input
-          className="hero__input"
-          type="text"
-          placeholder="Search for news"
-        />
-        <button className="hero__button" type="submit">
-          Search
-        </button>
-      </form>
+      <SearchForm />
     </section>
   );
-}
+};
 
 export default Hero;

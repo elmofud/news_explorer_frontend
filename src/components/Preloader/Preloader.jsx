@@ -1,11 +1,11 @@
 import "./Preloader.css";
 
-function Preloader() {
+const Preloader = () => {
   return (
     <div className="preloader">
-      <div className="preloader__circle"></div>
+      <div className="circle-preloader"></div>
     </div>
   );
-}
+};
 
 export default Preloader;

@@ -1,8 +1,8 @@
 import avatar from "../../images/avatar-space.png";
 
-import "./AboutSection.css";
+import "./About.css";
 
-const AboutSection = () => {
+const About = () => {
   return (
     <div className="about">
       <img src={avatar} className="about__avatar-image" alt="avatar image" />
@@ -16,4 +16,4 @@ const AboutSection = () => {
     </div>
   );
 };
-export default AboutSection;
+export default About;
