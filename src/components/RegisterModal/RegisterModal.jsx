@@ -7,13 +7,18 @@ const RegisterModal = ({
   onRegister,
   buttonText,
   onLoginClick,
+  onSignupSuccess,
 }) => {
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    onSignupSuccess();
+  };
   return (
     <ModalWithForm
       isOpen={isOpen}
       title="Register"
       onClose={onClose}
-      //   onSubmit={handleRegisterSubmit}
+      onSubmit={handleSubmit}
       buttonText={buttonText}
       alternateButton={
         <button
@@ -37,24 +42,24 @@ const RegisterModal = ({
           // value={values.email}
         />
       </label>
-      <label htmlFor="resgister-password" className="modal__label">
+      <label htmlFor="register-password" className="modal__label">
         Password{" "}
         <input
           required
           type="password"
           className="modal__input"
           id="register-password"
-          placeholder="Emter password"
+          placeholder="Enter password"
           name="password"
         />
       </label>
-      <label htmlFor="resgister-username" className="modal__label">
+      <label htmlFor="register-username" className="modal__label">
         Username{" "}
         <input
           required
           type="text"
           className="modal__input"
-          id="resgister-username"
+          id="register-username"
           placeholder="Username"
           name="username"
         />

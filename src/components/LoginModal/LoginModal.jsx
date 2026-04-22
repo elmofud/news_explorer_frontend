@@ -41,7 +41,7 @@ const LoginModal = ({
           required
           type="password"
           className="modal__input"
-          id="lgoin-password"
+          id="login-password"
           placeholder="Enter password"
           name="password"
         />

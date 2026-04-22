@@ -1,17 +1,18 @@
 import logoutIcon from "../../images/logout-icon.svg";
+import { Link } from "react-router-dom";
 import "./Navigation.css";
 
 const Navigation = ({ isLoggedIn }) => {
   return (
     <nav className="navigation">
-      <a className="navigation__link navigation__link_active" href="#">
+      <Link className="navigation__link navigation__link_active" to="/">
         Home
-      </a>
+      </Link>
       {isLoggedIn ? (
         <>
-          <a className="navigation__link" href="#">
+          <Link className="navigation__link" to="/saved-news">
             Saved Articles
-          </a>
+          </Link>
           <button className="navigation__button navigation__button_logout">
             Elise
             <img
