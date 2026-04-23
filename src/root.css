@@ -16,11 +16,12 @@
   --bg-light: #f5f6f7;
   --bg-gray: #c4c4c4;
   --bg-layout: rgba(0, 0, 0, 0.3);
+  --bg-transparent: transparent;
 
   /* Border & Divider Color */
   --border-gray: #d1d2d6;
   --border-white: #ffffff;
-  --border-white-transparent: rgba(255, 255, 255, 0.2);
+  --border-white-opacity: rgba(255, 255, 255, 0.2);
   --border-search-btn: #d1d2d6;
 
   /* Other Colors */

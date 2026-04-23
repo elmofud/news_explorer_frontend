@@ -1,0 +1,40 @@
+.about {
+  display: flex;
+  padding: 80px 104px;
+  gap: 56px;
+  align-items: center;
+  background-color: var(--bg-white);
+}
+
+.about__avatar-image {
+  border: none;
+  width: 464px;
+  height: 464px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.about__container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 600px;
+}
+
+.about__title {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 40px;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.about__ifo {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin: 0;
+}

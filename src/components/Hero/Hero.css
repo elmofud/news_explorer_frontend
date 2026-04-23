@@ -1,10 +1,12 @@
 .hero {
   display: flex;
+  position: relative;
+  top: 0;
   flex-direction: column;
   height: 576px;
-
   text-align: left;
   padding: 80px 416px;
+  z-index: -1;
 
   background-image: url("../../images/bg-hero.svg");
 }
