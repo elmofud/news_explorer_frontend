@@ -2,11 +2,11 @@ import logo from "../../images/newsExplorer.svg";
 import Navigation from "../Navigation/Navigation.jsx";
 import "./Header.css";
 
-function Header({ isLoggedIn }) {
+function Header({ isLoggedIn, onLoginClick }) {
   return (
     <header className="header">
       <img className="header__logo" src={logo} alt="News Explorer" />
-      <Navigation isLoggedIn={isLoggedIn} />
+      <Navigation isLoggedIn={isLoggedIn} onLoginClick={onLoginClick} />
     </header>
   );
 }

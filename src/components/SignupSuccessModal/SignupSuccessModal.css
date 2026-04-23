@@ -1,0 +1,64 @@
+.signup-success {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-layout);
+}
+
+.signup-success--open {
+  display: flex;
+}
+
+.signup-success__container {
+  position: relative;
+  min-width: 430px;
+  box-sizing: border-box;
+  background: var(--bg-white);
+  border-radius: 16px;
+  padding: 43px 36px 51px 36px;
+}
+
+.signup-success__close-button {
+  position: absolute;
+  top: -46px;
+  right: -46px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.signup-success__close-button-image {
+  height: 40px;
+  width: 40px;
+}
+
+.signup-success__title {
+  width: 315px;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--text-black);
+  margin: 0 0 14px;
+  padding: 0;
+}
+
+.signup-success__button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  font-family: "Inter";
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--primary-blue);
+  cursor: pointer;
+}
+
+.signup-success__button:hover {
+  text-decoration: underline;
+}

@@ -2,7 +2,7 @@ import logoutIcon from "../../images/logout-icon.svg";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
 
-const Navigation = ({ isLoggedIn }) => {
+const Navigation = ({ isLoggedIn, onLoginClick }) => {
   return (
     <nav className="navigation">
       <Link className="navigation__link navigation__link_active" to="/">
@@ -14,7 +14,7 @@ const Navigation = ({ isLoggedIn }) => {
             Saved Articles
           </Link>
           <button className="navigation__button navigation__button_logout">
-            Elise
+            Elis
             <img
               className="navigation__logout-icon"
               src={logoutIcon}
@@ -23,7 +23,9 @@ const Navigation = ({ isLoggedIn }) => {
           </button>
         </>
       ) : (
-        <button className="navigation__button">Sign In</button>
+        <button className="navigation__button" onClick={onLoginClick}>
+          Sign In
+        </button>
       )}
     </nav>
   );

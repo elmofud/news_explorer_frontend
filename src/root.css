@@ -8,16 +8,18 @@
   --text-primary: #1a1b22;
   --text-secondary: #b6bcbf;
   --text-white: #ffffff;
+  --text-black: #000000;
 
   /* Background Colors */
   --bg-white: #ffffff;
   --bg-light: #f5f6f7;
   --bg-gray: #c4c4c4;
+  --bg-layout: rgba(0, 0, 0, 0.3);
 
   /* Border & Divider Color */
   --border-gray: #d1d2d6;
   --border-white: #ffffff;
-  --border-white-transparent: #ffffff33;
+  --border-white-transparent: rgba(255, 255, 255, 0.2);
   --border-search-btn: #d1d2d6;
 
   /* Other Colors */

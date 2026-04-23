@@ -16,7 +16,7 @@ const RegisterModal = ({
   return (
     <ModalWithForm
       isOpen={isOpen}
-      title="Register"
+      title="Sign up"
       onClose={onClose}
       onSubmit={handleSubmit}
       buttonText={buttonText}
@@ -26,7 +26,7 @@ const RegisterModal = ({
           className="modal__alternate-button"
           onClick={onLoginClick}
         >
-          or Log In
+          or <span className="modal__alternate-button-link">Log In</span>
         </button>
       }
     >
@@ -60,7 +60,7 @@ const RegisterModal = ({
           type="text"
           className="modal__input"
           id="register-username"
-          placeholder="Username"
+          placeholder="Enter your username"
           name="username"
         />
       </label>
