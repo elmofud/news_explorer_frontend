@@ -15,6 +15,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState([]);
+  const [isSearch, setIsSearch] = useState(false);
   const [activeModal, setActiveModal] = useState("");
 
   const handleLoginClick = () => setActiveModal("login");
@@ -30,12 +31,13 @@ function App() {
         <Route path="/saved-news" element={<SavedNews />} />
       </Routes>
       {isLoading && <Preloader />}
-      {!isLoading && results.length === 0 && <NothingFound />}
+      {!isLoading && isSearch && results.length === 0 && <NothingFound />}
       <Footer />
       <LoginModal
         isOpen={activeModal === "login"}
         onClose={handleCloseModal}
         onRegisterClick={handleRegisterClick}
+        buttonText="Sign in"
       />
       <RegisterModal
         isOpen={activeModal === "signup"}
