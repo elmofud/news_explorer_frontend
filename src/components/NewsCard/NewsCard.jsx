@@ -4,7 +4,7 @@ const NewsCard = ({
   imageUrl,
   date,
   title,
-  description,
+  info,
   url,
   keyword,
   source,
@@ -23,7 +23,7 @@ const NewsCard = ({
       <div className="news-card__container">
         <p className="news-card__date">{date}</p>
         <h1 className="news-card__title">{title}</h1>
-        <p className="news-card__description">{description}</p>
+        <p className="news-card__info">{info}</p>
         <p className="news-card__source">{source}</p>
       </div>
     </div>

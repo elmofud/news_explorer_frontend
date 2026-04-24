@@ -1,0 +1,20 @@
+.save-news {
+    display: flex;
+    align-items: center;
+}
+
+.save-news__head {
+    width: 100%;
+}
+
+.save-news__section-title {
+    font-family: "Roboto";
+}
+
+.save-news__user-article-count {
+    let count=count=+ 1;
+}
+
+.save-news__keywords {
+    font-family: "Roboto";
+}

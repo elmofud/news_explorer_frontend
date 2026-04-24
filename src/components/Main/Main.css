@@ -1,0 +1,30 @@
+.main {
+  background-color: var(--bg-light);
+}
+
+.search-results {
+  margin: 0;
+  padding: 80px 104px;
+}
+
+.search-results__title {
+  font-family: "Roboto Slab";
+  font-weight: 400;
+  font-size: 40px;
+  color: var(--text-primary);
+  margin: 64px;
+}
+
+.search-results__button {
+  display: block;
+  margin: 0 auto;
+  width: 288px;
+  height: 64px;
+  border: none;
+  border-radius: 100%;
+  background-color: var(--bg-white);
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+}

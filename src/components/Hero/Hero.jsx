@@ -15,7 +15,6 @@ const Hero = () => {
         </p>
         <SearchForm />
       </section>
-      <About />
     </>
   );
 };

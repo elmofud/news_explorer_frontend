@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer.jsx";
 import Hero from "../Hero/Hero.jsx";
 import Preloader from "../Preloader/Preloader.jsx";
 import SavedNews from "../SavedNews/SavedNews.jsx";
+import Main from "../Main/Main.jsx";
 import NothingFound from "../NothingFound/NothingFound.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import SignupSuccessModal from "../SignupSuccessModal/SignupSucessModal.jsx";
@@ -27,7 +28,15 @@ function App() {
     <div className="app">
       <Header isLoggedIn={isLoggedIn} onLoginClick={handleLoginClick} />
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <Main searchResults={results} isSearch={isSearch} />
+            </>
+          }
+        />
         <Route path="/saved-news" element={<SavedNews />} />
       </Routes>
       {isLoading && <Preloader />}

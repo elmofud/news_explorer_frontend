@@ -10,7 +10,7 @@ const NewsCardList = ({ articles }) => {
           title={article.title}
           imageUrl={article.imageUrl}
           date={article.date}
-          description={article.description}
+          info={article.info}
           url={article.url}
           keyword={article.keyword}
           source={article.source}
