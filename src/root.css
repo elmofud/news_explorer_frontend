@@ -10,6 +10,7 @@
   --text-white: #ffffff;
   --text-black: #000000;
   --text-gray: #6c707a;
+  --text-article-opacity: rgba(26, 27, 34, 0.5);
 
   /* Background Colors */
   --bg-white: #ffffff;
@@ -17,6 +18,7 @@
   --bg-gray: #c4c4c4;
   --bg-layout: rgba(0, 0, 0, 0.3);
   --bg-transparent: transparent;
+  --bg-light-gray: #d1d2d6;
 
   /* Border & Divider Color */
   --border-gray: #d1d2d6;

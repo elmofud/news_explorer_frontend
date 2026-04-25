@@ -1,3 +1,4 @@
+import deleteButton from "../DeleteButton";
 import "./NewsCard.css";
 
 const NewsCard = ({
@@ -14,7 +15,7 @@ const NewsCard = ({
   const bookmarkButtonClassName = `news-card__bookmark-button ${isBookmarked ? "news-card__bookmark-button_active" : ""}`;
 
   //   const handleBookmark = () => {
-  //     onCardBookmark({id: NewsCard._id, isBookmarked: isBookmarked});
+  //     onCardBookmark({id: NewsCard._id, isBookmarked: isBookmarked, keyword: keyword, title: title, text: info, date: date, source: source, link: url, image: imageUrl });
   //   }
   return (
     <div className="news-card">

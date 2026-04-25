@@ -1,12 +1,13 @@
 import NewsCard from "../NewsCard/NewsCard.jsx";
 import "./NewsCardList.css";
 
-const NewsCardList = ({ articles }) => {
+const NewsCardList = ({ articles = [], isSavedNews = false, onDelete }) => {
   return (
     <ul className="news-card-list">
       {articles.map((article) => (
         <NewsCard
           key={article.id}
+          id={article.id}
           title={article.title}
           imageUrl={article.imageUrl}
           date={article.date}
@@ -14,6 +15,8 @@ const NewsCardList = ({ articles }) => {
           url={article.url}
           keyword={article.keyword}
           source={article.source}
+          onDelete={onDelete}
+          isSavedNews={isSavedNews}
         />
       ))}
     </ul>

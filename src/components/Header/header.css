@@ -11,6 +11,14 @@
   box-shadow: 0px -1px 0px 0px var(--border-white-opacity) inset;
 }
 
+.header_theme_light {
+  box-shadow: 0px -1px 0px 0px var(--border-white-opacity inset;);
+}
+
+.header_theme_dark {
+  box-shadow: 0px -1px 0px 0px var(--border-gray) inset;
+}
+
 .header__logo {
   height: 24px;
 }

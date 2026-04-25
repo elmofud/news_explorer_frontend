@@ -1,23 +1,44 @@
 import logoutIcon from "../../images/logout-icon.svg";
-import { Link } from "react-router-dom";
+import logoutBlackIcon from "../../images/logoutBlack-icon.svg";
+import { Link, NavLink } from "react-router-dom";
 import "./Navigation.css";
 
-const Navigation = ({ isLoggedIn, onLoginClick }) => {
+const Navigation = ({
+  isHomePage,
+  isLoggedIn,
+  username,
+  onLoginClick,
+  isActive,
+}) => {
   return (
-    <nav className="navigation">
-      <Link className="navigation__link navigation__link_active" to="/">
+    <nav
+      className={`navigation${isHomePage ? " navigation_theme_light" : " navigation_theme_dark"} `}
+    >
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          `navigation__link${isActive ? " navigation__link_active" : ""}`
+        }
+      >
         Home
-      </Link>
+      </NavLink>
       {isLoggedIn ? (
         <>
-          <Link className="navigation__link" to="/saved-news">
+          <NavLink
+            to="/saved-news"
+            className={({ isActive }) =>
+              `navigation__link${isActive ? " navigation__link_active" : ""}`
+            }
+          >
             Saved Articles
-          </Link>
-          <button className="navigation__button navigation__button_logout">
-            Elis
+          </NavLink>
+          <button
+            className={`navigation__button navigation__button_logout${isHomePage ? " navigation__button_light" : " navigation__button_dark"}`}
+          >
+            {username}
             <img
               className="navigation__logout-icon"
-              src={logoutIcon}
+              src={isHomePage ? logoutIcon : logoutBlackIcon}
               alt="Logout"
             />
           </button>

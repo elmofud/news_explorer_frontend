@@ -1,10 +1,9 @@
 .news-card {
-  display: flex;
   position: relative;
-  justify-content: center;
   max-width: 400px;
   overflow: hidden;
   border-radius: 16px;
+  background-color: var(--bg-white);
 }
 
 .news-card__bookmark-button {

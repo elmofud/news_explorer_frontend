@@ -1,12 +1,24 @@
 import logo from "../../images/newsExplorer.svg";
+import logoBlack from "../../images/newsExplorerBlack.svg";
 import Navigation from "../Navigation/Navigation.jsx";
 import "./Header.css";
 
-function Header({ isLoggedIn, onLoginClick }) {
+function Header({ isHomePage, username, isLoggedIn, onLoginClick }) {
   return (
-    <header className="header">
-      <img className="header__logo" src={logo} alt="News Explorer" />
-      <Navigation isLoggedIn={isLoggedIn} onLoginClick={onLoginClick} />
+    <header
+      className={`header${isHomePage ? " header_theme_light" : " header_theme_dark"}`}
+    >
+      <img
+        className="header__logo"
+        src={isHomePage ? logo : logoBlack}
+        alt="News Explorer"
+      />
+      <Navigation
+        isHomePage={isHomePage}
+        isLoggedIn={isLoggedIn}
+        onLoginClick={onLoginClick}
+        username={username}
+      />
     </header>
   );
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import closeButton from "../../assets/closeButton.svg";
 import "./ModalWithForm.css";
 
@@ -10,8 +11,32 @@ const ModalWithForm = ({
   title,
   isOpen,
 }) => {
+  const handleOverlayClick = (evt) => {
+    if (evt.target === evt.currentTarget) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    const handleEscapeKey = (evt) => {
+      if (evt.key === "Escape") {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscapeKey);
+    }
+    return () => {
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, [isOpen, onClose]);
+
   return (
-    <div className={`modal ${isOpen ? "modal--open" : ""}`}>
+    <div
+      className={`modal ${isOpen ? "modal--open" : ""}`}
+      onClick={handleOverlayClick}
+    >
       <div className="modal__container">
         <button className="modal__close-button" type="button" onClick={onClose}>
           <img
