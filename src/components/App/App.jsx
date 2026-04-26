@@ -25,6 +25,7 @@ function App() {
   const [results, setResults] = useState(mockArticles);
   const [isSearch, setIsSearch] = useState(true);
   const [savedArticles, setSavedArticles] = useState(mockArticles);
+  const [isBookmarked, setIsBookmarked] = useState(false);
 
   const [username, setUsername] = useState("Elis");
   const [isActive, setIsActive] = useState(false);
@@ -36,6 +37,11 @@ function App() {
 
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const handleDeleteArticle = (id) => {
+    setSavedArticles((prevArticles) =>
+      prevArticles.filter((article) => article.id !== id),
+    );
+  };
 
   return (
     <div className="app">
@@ -63,6 +69,7 @@ function App() {
               savedArticles={savedArticles}
               username={username}
               keywords="Nature, Yellowstone"
+              onDelete={handleDeleteArticle}
             />
           }
         />

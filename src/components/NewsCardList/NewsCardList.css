@@ -13,9 +13,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  max-width: 1232px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 64px 104px 80px;
+  padding: 64px 106px 80px;
   list-style: none;
   background-color: var(--bg-light);
 }

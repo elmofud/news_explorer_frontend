@@ -1,4 +1,3 @@
-import deleteButton from "../DeleteButton";
 import "./NewsCard.css";
 
 const NewsCard = ({
@@ -10,24 +9,49 @@ const NewsCard = ({
   keyword,
   source,
   id,
+  isSavedNews = false,
+  isBookmarked,
+  onDelete,
 }) => {
-  const isBookmarked = false;
   const bookmarkButtonClassName = `news-card__bookmark-button ${isBookmarked ? "news-card__bookmark-button_active" : ""}`;
 
-  //   const handleBookmark = () => {
-  //     onCardBookmark({id: NewsCard._id, isBookmarked: isBookmarked, keyword: keyword, title: title, text: info, date: date, source: source, link: url, image: imageUrl });
-  //   }
+  const handleDelete = () => {
+    if (onDelete) {
+      onDelete(id);
+    }
+  };
+
+  const handleBookmark = (pre) => {
+    if (isBookmarked) {
+      console.log("Article is already bookmarked");
+    }
+  };
+
   return (
-    <div className="news-card">
-      <button className={bookmarkButtonClassName} type="button"></button>
+    <li className="news-card">
+      {isSavedNews && <span className="news-card__keyword">{keyword}</span>}
+      {isSavedNews ? (
+        <button
+          className="news-card__delete-button"
+          type="button"
+          onClick={handleDelete}
+          aria-label="Remove from saved"
+        ></button>
+      ) : (
+        <button
+          className={bookmarkButtonClassName}
+          type="button"
+          onClick={handleBookmark}
+        ></button>
+      )}
       <img src={imageUrl} alt={title} className="news-card__image" />
       <div className="news-card__container">
         <p className="news-card__date">{date}</p>
-        <h1 className="news-card__title">{title}</h1>
+        <h2 className="news-card__title">{title}</h2>
         <p className="news-card__info">{info}</p>
         <p className="news-card__source">{source}</p>
       </div>
-    </div>
+    </li>
   );
 };
 

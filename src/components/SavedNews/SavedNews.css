@@ -1,12 +1,12 @@
 .saved-news {
   margin: 0;
-  background-color: var(--bg-light-gray);
+  background-color: var(--bg-light);
 }
 
 .saved-news__head {
   background-color: var(--bg-white);
   padding: 40px 0 56px;
-  border-bottom: 3px solid var(--border-gray);
+  border-bottom: 3px solid var(--border-light);
 }
 
 .saved-news__head-container {
