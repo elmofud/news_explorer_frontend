@@ -1,5 +1,3 @@
-import heroBackground from "../../images/bg-hero.svg";
-import About from "../About/About.jsx";
 import SearchForm from "../SearchForm/SearchForm.jsx";
 
 import "./Hero.css";

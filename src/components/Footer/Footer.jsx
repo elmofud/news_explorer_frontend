@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import linkedin from "../../images/linkedin-icon.svg";
 import github from "../../images/github-icon.svg";
 
@@ -9,12 +10,19 @@ const Footer = () => {
       <p className="footer__copyright">© 2024 Supersite, Powered by News API</p>
       <nav className="footer__nav">
         <div className="footer__links">
-          <a className="footer__link" href="#">
+          <Link className="footer__link" to="/">
             HOME
-          </a>
+          </Link>
           <a className="footer__link" href="#">
             Triple Ten
           </a>
+          {/* className="footer__link"
+  href="https://tripleten.com"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Triple Ten
+</a> */}
         </div>
         <div className="footer__icons">
           <a className="footer__icon" href="#">

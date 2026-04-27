@@ -82,3 +82,13 @@
 .navigation_theme_dark .navigation__link {
   color: var(--text-primary);
 }
+
+@media (max-width: 768px) {
+  .navigation__button {
+    height: 40px;
+    font-size: 16px;
+  }
+  .navigation__link {
+    font-size: 16px;
+  }
+}

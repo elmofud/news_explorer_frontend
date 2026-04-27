@@ -15,10 +15,10 @@
 }
 
 .nothing-found__title {
-  font-family: "roboto Slab";
+  font-family: "Roboto Slab";
   font-size: 26px;
   font-weight: 400;
-  color: var(--text-dark);
+  color: var(--text-primary);
 }
 
 .nothing-found__text {

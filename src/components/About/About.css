@@ -30,11 +30,28 @@
   margin: 0;
 }
 
-.about__ifo {
+.about__info {
   font-family: "Roboto";
   font-weight: 400;
   font-size: 18px;
   color: var(--text-primary);
   line-height: 1.5;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    padding: 40px;
+  }
+}
+.about__avatar-image {
+  width: 232px;
+  height: 232px;
+}
+
+@media (max-width: 320px) {
+  .about {
+    padding: 24px 16px;
+  }
 }

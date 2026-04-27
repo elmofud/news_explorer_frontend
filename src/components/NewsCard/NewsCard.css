@@ -33,7 +33,7 @@
   width: 100%;
   height: 272px;
   object-fit: cover;
-  border: 16px 16px 0 0;
+  border-radius: 16px 16px 0 0;
 }
 
 .news-card__container {
@@ -43,7 +43,7 @@
 }
 
 .news-card__date {
-  font-family: Source Sans Pro;
+  font-family: "Roboto";
   font-weight: 400;
   font-size: 18px;
   color: var(--text-secondary);
@@ -63,7 +63,7 @@
 }
 
 .news-card__info {
-  font-family: "roboto";
+  font-family: "Roboto";
   font-weight: 400;
   font-size: 16px;
   line-height: 1.375;
@@ -144,8 +144,6 @@
   background-image: url(../../images/delete-icon-hover.svg);
   background-repeat: no-repeat;
   background-position: center;
-
-  background: cover/center no-repeat;
 }
 
 .news-card__delete-button:hover::before {

@@ -26,7 +26,7 @@ const SavedNews = ({
       </section>
       <NewsCardList
         articles={savedArticles}
-        isSavedNews={savedArticles}
+        isSavedNews={true}
         onDelete={onDelete}
       />
     </div>

@@ -12,12 +12,13 @@
   font-weight: 400;
   font-size: 40px;
   color: var(--text-primary);
-  margin: 64px;
+  margin: 0 0 32px;
 }
 
 .search-results__button {
   display: block;
   margin: 0 auto;
+  margin-top: 64px;
   width: 288px;
   height: 64px;
   border: 3px solid var(--border-transparent);
@@ -27,4 +28,20 @@
   font-weight: 500;
   font-size: 18px;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .search-results {
+    padding: 40px;
+  }
+
+  .search-results__title {
+    margin: 0 0 32px;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-results {
+    padding: 24px 16px;
+  }
 }

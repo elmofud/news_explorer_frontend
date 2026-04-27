@@ -4,6 +4,7 @@ const SearchForm = () => {
   return (
     <form className="search-form">
       <input
+        required
         className="search-form__input"
         type="text"
         placeholder="Search for news"

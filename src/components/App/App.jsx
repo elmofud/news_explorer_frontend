@@ -59,6 +59,7 @@ function App() {
             <>
               <Hero />
               <Main searchResults={results} isSearch={isSearch} />
+              {!isSearch && results.length === 0 && <NothingFound />}
             </>
           }
         />
@@ -75,7 +76,6 @@ function App() {
         />
       </Routes>
       {isLoading && <Preloader />}
-      {!isLoading && isSearch && results.length === 0 && <NothingFound />}
       <Footer />
       <LoginModal
         isOpen={activeModal === "login"}

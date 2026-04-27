@@ -12,7 +12,7 @@
 }
 
 .header_theme_light {
-  box-shadow: 0px -1px 0px 0px var(--border-white-opacity inset;);
+  box-shadow: 0px -1px 0px 0px var(--border-white-opacity) inset;
 }
 
 .header_theme_dark {
@@ -21,4 +21,18 @@
 
 .header__logo {
   height: 24px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 40px;
+    height: 66x;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    padding: 0 16px;
+    height: 56px;
+  }
 }
