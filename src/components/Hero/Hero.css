@@ -53,5 +53,6 @@
 @media (max-width: 320px) {
   .hero {
     padding: 40px 16px;
+    overflow: hidden;
   }
 }

@@ -2,7 +2,7 @@ import SearchForm from "../SearchForm/SearchForm.jsx";
 
 import "./Hero.css";
 
-const Hero = () => {
+const Hero = ({ onSearch }) => {
   return (
     <>
       <section className="hero">
@@ -11,7 +11,7 @@ const Hero = () => {
           Find the latest news on any topic and save them in your personal
           account.
         </p>
-        <SearchForm />
+        <SearchForm onSearch={onSearch} />
       </section>
     </>
   );

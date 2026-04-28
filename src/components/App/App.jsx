@@ -22,8 +22,8 @@ function App() {
    results should be useState([])
    isSearch should be useState(false)  
    savedArticles should be useState([]) and populated from API */
-  const [results, _setResults] = useState(mockArticles);
-  const [isSearch, _setIsSearch] = useState(true);
+  const [results, setResults] = useState(mockArticles);
+  const [isSearch, setIsSearch] = useState(true);
   const [savedArticles, setSavedArticles] = useState(mockArticles);
   const [_isBookmarked, _setIsBookmarked] = useState(false);
 
@@ -34,6 +34,14 @@ function App() {
   const handleRegisterClick = () => setActiveModal("signup");
   const handleSignupSuccess = () => setActiveModal("signup-success");
   const handleCloseModal = () => setActiveModal("");
+  const handleSearch = (query) => {
+    setIsSearch(true);
+    /*TODO Stage 1.2: replace this with API call to fetch search results */
+    const filtered = mockArticles.filter((article) =>
+      article.title.toLowerCase().includes(query.toLowerCase()),
+    );
+    setResults(filtered);
+  };
 
   const location = useLocation();
   const isHomePage = location.pathname === "/";
@@ -57,7 +65,7 @@ function App() {
           path="/"
           element={
             <>
-              <Hero />
+              <Hero onSearch={handleSearch} />
               <Main searchResults={results} isSearch={isSearch} />
               {!isSearch && results.length === 0 && <NothingFound />}
             </>
