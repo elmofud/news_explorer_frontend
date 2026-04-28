@@ -1,0 +1,23 @@
+
+> news_explorer_frontend@0.0.0 lint
+> eslint . --report-unused-disable-directives --max-warnings 0
+
+
+C:\Users\soul risen\projects\news_explorer_frontend\src\components\App\App.jsx
+  18:21  error  'setIsLoading' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     no-unused-vars
+  25:19  error  'setResults' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u       no-unused-vars
+  26:20  error  'setIsSearch' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u      no-unused-vars
+  28:10  error  'isBookmarked' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u     no-unused-vars
+  28:24  error  'setIsBookmarked' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  30:20  error  'setUsername' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u      no-unused-vars
+  31:20  error  'setIsActive' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u      no-unused-vars
+
+C:\Users\soul risen\projects\news_explorer_frontend\src\components\NewsCard\NewsCard.jsx
+   8:3   error  'url' is defined but never used  no-unused-vars
+  24:27  error  'pre' is defined but never used  no-unused-vars
+
+C:\Users\soul risen\projects\news_explorer_frontend\src\components\RegisterModal\RegisterModal.jsx
+  7:3  error  'onRegister' is defined but never used  no-unused-vars
+
+✖ 10 problems (10 errors, 0 warnings)
+

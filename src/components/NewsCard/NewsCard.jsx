@@ -5,7 +5,6 @@ const NewsCard = ({
   date,
   title,
   info,
-  url,
   keyword,
   source,
   id,
@@ -21,7 +20,7 @@ const NewsCard = ({
     }
   };
 
-  const handleBookmark = (pre) => {
+  const handleBookmark = () => {
     if (isBookmarked) {
       console.log("Article is already bookmarked");
     }

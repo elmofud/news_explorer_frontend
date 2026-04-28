@@ -4,7 +4,6 @@ import "./RegisterModal.css";
 const RegisterModal = ({
   isOpen,
   onClose,
-  onRegister,
   buttonText,
   onLoginClick,
   onSignupSuccess,

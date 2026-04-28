@@ -3,13 +3,7 @@ import logoutBlackIcon from "../../images/logoutBlack-icon.svg";
 import { Link, NavLink } from "react-router-dom";
 import "./Navigation.css";
 
-const Navigation = ({
-  isHomePage,
-  isLoggedIn,
-  username,
-  onLoginClick,
-  isActive,
-}) => {
+const Navigation = ({ isHomePage, isLoggedIn, username, onLoginClick }) => {
   return (
     <nav
       className={`navigation${isHomePage ? " navigation_theme_light" : " navigation_theme_dark"} `}

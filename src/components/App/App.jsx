@@ -14,21 +14,21 @@ import LoginModal from "../LoginModal/LoginModal.jsx";
 import "./App.css";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoggedIn] = useState(true);
+  const [isLoading, _setIsLoading] = useState(false);
   const [activeModal, setActiveModal] = useState("");
 
   /* /*TODO Stage 1.2: revert these to defaults once News API is connected.
    results should be useState([])
    isSearch should be useState(false)  
    savedArticles should be useState([]) and populated from API */
-  const [results, setResults] = useState(mockArticles);
-  const [isSearch, setIsSearch] = useState(true);
+  const [results, _setResults] = useState(mockArticles);
+  const [isSearch, _setIsSearch] = useState(true);
   const [savedArticles, setSavedArticles] = useState(mockArticles);
-  const [isBookmarked, setIsBookmarked] = useState(false);
+  const [_isBookmarked, _setIsBookmarked] = useState(false);
 
-  const [username, setUsername] = useState("Elis");
-  const [isActive, setIsActive] = useState(false);
+  const [username, _setUsername] = useState("Elis");
+  const [isActive, _setIsActive] = useState(false);
 
   const handleLoginClick = () => setActiveModal("login");
   const handleRegisterClick = () => setActiveModal("signup");

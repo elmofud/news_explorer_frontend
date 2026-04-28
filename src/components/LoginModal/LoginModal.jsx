@@ -1,13 +1,7 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 import "./LoginModal.css";
 
-const LoginModal = ({
-  isOpen,
-  onClose,
-  onLogin,
-  buttonText,
-  onRegisterClick,
-}) => {
+const LoginModal = ({ isOpen, onClose, buttonText, onRegisterClick }) => {
   return (
     <ModalWithForm
       title="Sign in"
