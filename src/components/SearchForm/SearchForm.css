@@ -1,52 +1,50 @@
 .search-form {
-  display: flex;
-  align-items: center;
-  background: var(--bg-white);
-  border-radius: 100px;
-  border: 1px solid var(--border-search-btn);
-  width: 680px;
-  height: 64px;
-  top: 432px;
-  left: 416px;
-  opacity: 1;
+    display: flex;
+    background: var(--bg-white);
+    border-radius: 100px;
+    border: 1px solid var(--border-search-btn);
+    width: 100%px;
+    max-width: 680px;
+    height: 64px;
 }
 
 .search-form__input {
-  flex: 1;
-  border: none;
-  background: transparent;
-  font-family: "Roboto";
-  font-weight: 400;
-  font-size: 16px;
-  color: var(--text-secondary);
-  padding: 21px 0 21px 24px;
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--text-secondary);
+    padding: 21px 0 21px 24px;
+    width: 100%;
 }
 
 .search-form__button {
-  width: 168px;
-  height: 64px;
-  border-radius: 100px;
-  border: none;
-  background-color: var(--btn-blue);
-  color: var(--text-white);
-  font-family: "Roboto";
-  font-weight: 500;
-  font-size: 18px;
-  padding: 0 12px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+    width: 168px;
+    height: 64px;
+    border-radius: 100px;
+    border: none;
+    background-color: var(--btn-blue);
+    color: var(--text-white);
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 18px;
+    padding: 0 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .search-form__button:hover {
-  background-color: var(--btn-blue-hover);
+    background-color: var(--btn-blue-hover);
 }
 
 .search-form__button:active {
-  background-color: var(--btn-blue-active);
+    background-color: var();
 }
 
 @media (max-width: 1420px) {
-  .search-form {
-    width: 100%;
-  }
+    .search-form {
+        width: 100%;
+    }
 }
