@@ -65,59 +65,64 @@ function App() {
 
     return (
         <div className="app">
-            <Header
-                isHomePage={isHomePage}
-                isLoggedIn={isLoggedIn}
-                onLoginClick={handleLoginClick}
-                username={username}
-                isActive={isActive}
-            />
-            <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <>
-                            <Hero onSearch={handleSearch} />
-                            <Main searchResults={results} isSearch={isSearch} />
-                            {!isSearch && results.length === 0 && (
-                                <NothingFound />
-                            )}
-                        </>
-                    }
+            <div className="app__content">
+                <Header
+                    isHomePage={isHomePage}
+                    isLoggedIn={isLoggedIn}
+                    onLoginClick={handleLoginClick}
+                    username={username}
+                    isActive={isActive}
                 />
-                <Route
-                    path="/saved-news"
-                    element={
-                        <SavedNews
-                            savedArticles={savedArticles}
-                            username={username}
-                            keywords="Nature, Yellowstone"
-                            onDelete={handleDeleteArticle}
-                        />
-                    }
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <>
+                                <Hero onSearch={handleSearch} />
+                                <Main
+                                    searchResults={results}
+                                    isSearch={isSearch}
+                                />
+                                {!isSearch && results.length === 0 && (
+                                    <NothingFound />
+                                )}
+                            </>
+                        }
+                    />
+                    <Route
+                        path="/saved-news"
+                        element={
+                            <SavedNews
+                                savedArticles={savedArticles}
+                                username={username}
+                                keywords="Nature, Yellowstone"
+                                onDelete={handleDeleteArticle}
+                            />
+                        }
+                    />
+                </Routes>
+                {isLoading && <Preloader />}
+                <Footer />
+                <LoginModal
+                    isOpen={activeModal === "login"}
+                    onClose={handleCloseModal}
+                    onRegisterClick={handleRegisterClick}
+                    buttonText="Sign in"
                 />
-            </Routes>
-            {isLoading && <Preloader />}
-            <Footer />
-            <LoginModal
-                isOpen={activeModal === "login"}
-                onClose={handleCloseModal}
-                onRegisterClick={handleRegisterClick}
-                buttonText="Sign in"
-            />
-            <RegisterModal
-                isOpen={activeModal === "signup"}
-                onClose={handleCloseModal}
-                onLoginClick={handleLoginClick}
-                onSignupSuccess={handleSignupSuccess}
-                buttonText="Sign up"
-            />
-            <SignupSuccessModal
-                isOpen={activeModal === "signup-success"}
-                onClose={handleCloseModal}
-                onLoginClick={handleLoginClick}
-                buttonText="Sign in"
-            />
+                <RegisterModal
+                    isOpen={activeModal === "signup"}
+                    onClose={handleCloseModal}
+                    onLoginClick={handleLoginClick}
+                    onSignupSuccess={handleSignupSuccess}
+                    buttonText="Sign up"
+                />
+                <SignupSuccessModal
+                    isOpen={activeModal === "signup-success"}
+                    onClose={handleCloseModal}
+                    onLoginClick={handleLoginClick}
+                    buttonText="Sign in"
+                />
+            </div>
         </div>
     );
 }
