@@ -5,11 +5,16 @@
     flex-direction: column;
     height: 576px;
     text-align: left;
-    padding: 80px 416px;
+    padding: 80px 0;
+    align-items: center;
 
     background-image: url("../../images/bg-hero.svg");
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.hero__text {
+    max-width: 608px;
 }
 
 .hero__title {
@@ -36,8 +41,12 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding: 80px;
+        padding-top: 66px;
         height: 400px;
+    }
+
+    .hero__text {
+        max-width: 452px;
     }
 
     .hero__title {
@@ -46,6 +55,11 @@
         height: 80px;
         line-height: 40px;
         margin-top: 38px;
+        margin-bottom: 16px;
+    }
+
+    .hero__subtitle {
+        margin-bottom: 48px;
     }
 }
 

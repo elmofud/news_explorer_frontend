@@ -11,101 +11,115 @@ import NothingFound from "../NothingFound/NothingFound.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import SignupSuccessModal from "../SignupSuccessModal/SignupSucessModal.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
+import { getNewsArticles } from "../../utils/newsApi.js";
 import "./App.css";
 
 function App() {
-  const [isLoggedIn] = useState(true);
-  const [isLoading, _setIsLoading] = useState(false);
-  const [activeModal, setActiveModal] = useState("");
+    const [isLoggedIn] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
+    const [activeModal, setActiveModal] = useState("");
 
-  /* /*TODO Stage 1.2: revert these to defaults once News API is connected.
+    /* /*TODO Stage 1.2: revert these to defaults once News API is connected.
    results should be useState([])
    isSearch should be useState(false)  
    savedArticles should be useState([]) and populated from API */
-  const [results, setResults] = useState(mockArticles);
-  const [isSearch, setIsSearch] = useState(true);
-  const [savedArticles, setSavedArticles] = useState(mockArticles);
-  const [_isBookmarked, _setIsBookmarked] = useState(false);
+    const [results, setResults] = useState(mockArticles);
+    const [isSearch, setIsSearch] = useState(true);
+    const [savedArticles, setSavedArticles] = useState(mockArticles);
+    const [_isBookmarked, _setIsBookmarked] = useState(false);
 
-  const [username, _setUsername] = useState("Elis");
-  const [isActive, _setIsActive] = useState(false);
+    const [username, _setUsername] = useState("Elis");
+    const [isActive, _setIsActive] = useState(false);
 
-  const handleLoginClick = () => setActiveModal("login");
-  const handleRegisterClick = () => setActiveModal("signup");
-  const handleSignupSuccess = () => setActiveModal("signup-success");
-  const handleCloseModal = () => setActiveModal("");
-  const handleSearch = (query) => {
-    setIsSearch(true);
-    /*TODO Stage 1.2: replace this with API call to fetch search results */
-    const filtered = mockArticles.filter((article) =>
-      article.title.toLowerCase().includes(query.toLowerCase()),
-    );
-    setResults(filtered);
-  };
+    const handleLoginClick = () => setActiveModal("login");
+    const handleRegisterClick = () => setActiveModal("signup");
+    const handleSignupSuccess = () => setActiveModal("signup-success");
+    const handleCloseModal = () => setActiveModal("");
+    const handleSearch = async (keyword) => {
+        setIsSearch(true);
+        setIsLoading(true);
+        try {
+            const articles = await getNewsArticles(keyword);
+            setResults(articles);
+        } catch (error) {
+            console.error("Error fetching news articles:", error);
+            setResults([]);
+        } finally {
+            setIsLoading(false);
+        }
 
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
-  const handleDeleteArticle = (id) => {
-    setSavedArticles((prevArticles) =>
-      prevArticles.filter((article) => article.id !== id),
-    );
-  };
+        /*TODO Stage 1.2: replace this with API call to fetch search results */
+        const filtered = mockArticles.filter((article) =>
+            article.title.toLowerCase().includes(keyword.toLowerCase()),
+        );
+        setResults(filtered);
+    };
 
-  return (
-    <div className="app">
-      <Header
-        isHomePage={isHomePage}
-        isLoggedIn={isLoggedIn}
-        onLoginClick={handleLoginClick}
-        username={username}
-        isActive={isActive}
-      />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero onSearch={handleSearch} />
-              <Main searchResults={results} isSearch={isSearch} />
-              {!isSearch && results.length === 0 && <NothingFound />}
-            </>
-          }
-        />
-        <Route
-          path="/saved-news"
-          element={
-            <SavedNews
-              savedArticles={savedArticles}
-              username={username}
-              keywords="Nature, Yellowstone"
-              onDelete={handleDeleteArticle}
+    const location = useLocation();
+    const isHomePage = location.pathname === "/";
+    const handleDeleteArticle = (id) => {
+        setSavedArticles((prevArticles) =>
+            prevArticles.filter((article) => article.id !== id),
+        );
+    };
+
+    return (
+        <div className="app">
+            <Header
+                isHomePage={isHomePage}
+                isLoggedIn={isLoggedIn}
+                onLoginClick={handleLoginClick}
+                username={username}
+                isActive={isActive}
             />
-          }
-        />
-      </Routes>
-      {isLoading && <Preloader />}
-      <Footer />
-      <LoginModal
-        isOpen={activeModal === "login"}
-        onClose={handleCloseModal}
-        onRegisterClick={handleRegisterClick}
-        buttonText="Sign in"
-      />
-      <RegisterModal
-        isOpen={activeModal === "signup"}
-        onClose={handleCloseModal}
-        onLoginClick={handleLoginClick}
-        onSignupSuccess={handleSignupSuccess}
-        buttonText="Sign up"
-      />
-      <SignupSuccessModal
-        isOpen={activeModal === "signup-success"}
-        onClose={handleCloseModal}
-        onLoginClick={handleLoginClick}
-        buttonText="Sign in"
-      />
-    </div>
-  );
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <>
+                            <Hero onSearch={handleSearch} />
+                            <Main searchResults={results} isSearch={isSearch} />
+                            {!isSearch && results.length === 0 && (
+                                <NothingFound />
+                            )}
+                        </>
+                    }
+                />
+                <Route
+                    path="/saved-news"
+                    element={
+                        <SavedNews
+                            savedArticles={savedArticles}
+                            username={username}
+                            keywords="Nature, Yellowstone"
+                            onDelete={handleDeleteArticle}
+                        />
+                    }
+                />
+            </Routes>
+            {isLoading && <Preloader />}
+            <Footer />
+            <LoginModal
+                isOpen={activeModal === "login"}
+                onClose={handleCloseModal}
+                onRegisterClick={handleRegisterClick}
+                buttonText="Sign in"
+            />
+            <RegisterModal
+                isOpen={activeModal === "signup"}
+                onClose={handleCloseModal}
+                onLoginClick={handleLoginClick}
+                onSignupSuccess={handleSignupSuccess}
+                buttonText="Sign up"
+            />
+            <SignupSuccessModal
+                isOpen={activeModal === "signup-success"}
+                onClose={handleCloseModal}
+                onLoginClick={handleLoginClick}
+                buttonText="Sign in"
+            />
+        </div>
+    );
 }
 
 export default App;
