@@ -1,58 +1,57 @@
 .hero {
-  display: flex;
-  position: relative;
-  top: 0;
-  flex-direction: column;
-  height: 576px;
-  text-align: left;
-  padding: 80px 416px;
-  z-index: -1;
+    display: flex;
+    position: relative;
+    top: 0;
+    flex-direction: column;
+    height: 576px;
+    text-align: left;
+    padding: 80px 416px;
 
-  background-image: url("../../images/bg-hero.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-image: url("../../images/bg-hero.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hero__title {
-  font-family: "Roboto Slab";
-  font-weight: 400;
-  font-size: 60px;
-  color: var(--text-white);
-  margin: 80px 0 32px;
+    font-family: "Roboto Slab";
+    font-weight: 400;
+    font-size: 60px;
+    color: var(--text-white);
+    margin: 80px 0 32px;
 }
 
 .hero__subtitle {
-  font-family: "Roboto";
-  font-weight: 400;
-  font-size: 18px;
-  color: var(--text-white);
-  margin: 0 0 88px;
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--text-white);
+    margin: 0 0 88px;
 }
 
 @media (max-width: 1420px) {
-  .hero__subtitle {
-    margin: 0 0 48px;
-  }
+    .hero__subtitle {
+        margin: 0 0 48px;
+    }
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding: 80px;
-    height: 400px;
-  }
+    .hero {
+        padding: 80px;
+        height: 400px;
+    }
 
-  .hero__title {
-    font-size: 36px;
-    min-width: 385px;
-    height: 80px;
-    line-height: 40px;
-    margin-top: 38px;
-  }
+    .hero__title {
+        font-size: 36px;
+        min-width: 385px;
+        height: 80px;
+        line-height: 40px;
+        margin-top: 38px;
+    }
 }
 
 @media (max-width: 320px) {
-  .hero {
-    padding: 40px 16px;
-    overflow: hidden;
-  }
+    .hero {
+        padding: 40px 16px;
+        overflow: hidden;
+    }
 }
