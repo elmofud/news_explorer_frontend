@@ -1,21 +1,29 @@
-import avatar from "../../images/placeholder-image.svg";
+import avatar from "../../images/author-avatar.jpg";
 
 import "./About.css";
 
 const About = () => {
-  return (
-    <div className="about">
-      <img src={avatar} className="about__avatar-image" alt="avatar image" />
-      <div className="about__container">
-        <h2 className="about__title">About the author</h2>
-        <p className="about__ifo">
-          This block describes the project author. Here you should indicate your
-          name, what you do, and which development technologies you know. You
-          can also talk about your experience with TripleTen, what you learned
-          there, and how you can help potential customers.
-        </p>
-      </div>
-    </div>
-  );
+    return (
+        <div className="about">
+            <img
+                src={avatar}
+                className="about__avatar-image"
+                alt="avatar image"
+            />
+            <div className="about__container">
+                <h2 className="about__title">About the author</h2>
+                <p className="about__info">
+                    I'm Tracey, retiring from Stellantis in 2030 and pivoting
+                    into tech for my next chapter. My design background gave me
+                    an early eye for how things should look and feel — coding
+                    lets me actually build them. I'm learning React, JavaScript,
+                    HTML, CSS, Vite, and Git through TripleTen, and this News
+                    Explorer project demonstrates REST API integration with a
+                    React frontend. Retirement isn't an ending for me — it's
+                    freedom to build apps and games I've always wanted to make.
+                </p>
+            </div>
+        </div>
+    );
 };
 export default About;

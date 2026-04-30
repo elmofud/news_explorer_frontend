@@ -17,6 +17,7 @@ export const getNewsArticles = async (keyword) => {
     return data.articles.map((article, index) => ({
         id: `article-${index}`,
         title: article.title,
+        info: article.description,
         imageUrl: article.urlToImage,
         date: new Date(article.publishedAt).toLocaleDateString("en-US", {
             year: "numeric",
