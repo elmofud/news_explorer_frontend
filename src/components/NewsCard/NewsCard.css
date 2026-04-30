@@ -25,7 +25,8 @@
     background-image: url(../../images/bookmark-hover.svg);
 }
 
-.news-card__bookmark-button_active {
+.news-card__bookmark-button_active,
+.news-card__bookmark-button_active:hover {
     background-image: url(../../images/bookmark-marked.svg);
 }
 
