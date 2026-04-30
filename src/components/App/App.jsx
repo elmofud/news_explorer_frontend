@@ -47,12 +47,6 @@ function App() {
         } finally {
             setIsLoading(false);
         }
-
-        /*TODO Stage 1.2: replace this with API call to fetch search results */
-        const filtered = mockArticles.filter((article) =>
-            article.title.toLowerCase().includes(keyword.toLowerCase()),
-        );
-        setResults(filtered);
     };
 
     const location = useLocation();
