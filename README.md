@@ -1,16 +1,109 @@
-# React + Vite
+# News Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React application that allows users to search for news articles and save their favorites to a personal account.
 
-Currently, two official plugins are available:
+## About the Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+News Explorer is a full-stack web application built as part of the TripleTen web development program. The frontend allows users to search for news articles using the News API, view results in a card grid, and save articles to their personal account. Users can also view and manage their saved articles on a dedicated page.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Search for news articles by keyword
+- View search results in a responsive card grid
+- Save articles to a personal account
+- View saved articles with keyword tags
+- Delete saved articles
+- User authentication (Sign In / Sign Up)
+- Fully responsive design for desktop, tablet, and mobile
 
-## Expanding the ESLint configuration
+## Technologies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19
+- React Router DOM (client-side routing)
+- Vite (build tool)
+- CSS Modules with BEM naming convention
+- CSS custom properties (design tokens)
+- Custom fonts via @font-face (Inter, Roboto, Roboto Slab)
+- News API
+
+## Project Structure
+
+```
+src/
+  components/
+    App/
+    Header/
+    Navigation/
+    Hero/
+    SearchForm/
+    Main/
+    NewsCard/
+    NewsCardList/
+    SavedNews/
+    About/
+    Footer/
+    Preloader/
+    NothingFound/
+    ModalWithForm/
+    LoginModal/
+    RegisterModal/
+    SignupSuccessModal/
+  images/
+  vendor/
+    fonts/
+    fonts.css
+  utils/
+    mockData.js
+  index.css
+  root.css
+  main.jsx
+```
+
+## Pages
+
+- `/` — Home page with search form and results
+- `/saved-news` — Saved articles page (requires login)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js v18 or higher
+- npm
+
+### Installation
+
+```bash
+npm install
+```
+
+### Running Locally
+
+```bash
+npm run dev
+```
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+## Responsive Design
+
+The application is fully responsive and supports the following breakpoints:
+
+- Desktop: 1440px and above
+- Tablet: 768px
+- Mobile: 320px
+
+## Deployment
+
+The frontend is deployed to GitHub Pages.
+
+## Future Plans (Stage 2 & 3)
+
+- Connect to a backend API for user authentication and article saving
+- Add bookmark/save functionality
+- Add hamburger menu for mobile navigation
+- Deploy backend to Google Cloud
