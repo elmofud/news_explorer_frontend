@@ -9,10 +9,22 @@ export const getNewsArticles = async (keyword) => {
 
     const response = await fetch(url);
 
-    if (Response.ok) {
+    if (!response.ok) {
         throw new Error(`News API error: ${response.status}`);
     }
 
     const data = await response.json();
-    return data.articles;
+    return data.articles.map((article, index) => ({
+        id: `article-${index}`,
+        title: article.title,
+        imageUrl: article.urlToImage,
+        date: new Date(article.publishedAt).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        }),
+        source: article.source.name,
+        url: article.url,
+        keyword: "",
+    }));
 };
