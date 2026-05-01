@@ -9,7 +9,7 @@ import Main from "../Main/Main.jsx";
 import mockArticles from "../../utils/mockData.js";
 import NothingFound from "../NothingFound/NothingFound.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
-import SignupSuccessModal from "../SignupSuccessModal/SignupSucessModal.jsx";
+import SignupSuccessModal from "../SignupSuccessModal/SignupSuccessModal.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
 import { getNewsArticles } from "../../utils/newsApi.js";
 import "./App.css";
