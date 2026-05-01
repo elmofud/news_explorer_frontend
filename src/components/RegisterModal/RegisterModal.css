@@ -1,1 +1,7 @@
+/* RegisterModal styles
+   Layout and form styles inherited from ModalWithForm.
+   Add RegisterModal-specific overrides below. */
 
+.register-modal {
+    /* Reserved for RegisterModal-specific overrides */
+}
