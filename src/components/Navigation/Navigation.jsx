@@ -26,6 +26,7 @@ const Navigation = ({ isHomePage, isLoggedIn, username, onLoginClick }) => {
           >
             Saved Articles
           </NavLink>
+          {isLoggedIn ? (
           <button
             className={`navigation__button navigation__button_logout${isHomePage ? " navigation__button_light" : " navigation__button_dark"}`}
           >
