@@ -1,13 +1,13 @@
-@import url("./vendor/normalize.css");
-@import url("./vendor/fonts.css");
-@import url("./root.css");
-@import url("./components/App/App.css");
-@import url("./components/ModalWithForm/ModalWithForm.css");
-@import url("./components/NewsCardList/NewsCardList.css");
-@import url("./components/SearchForm/SearchForm.css");
-@import url("./components/RegisterModal/RegisterModal.css");
-@import url("./components/SavedNews/SavedNews.css");
-@import url("./components/Hero/Hero.css");
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+@import url(./root.css);
+@import url(./components/App/App.css);
+@import url(./components/ModalWithForm/ModalWithForm.css);
+@import url(./components/NewsCardList/NewsCardList.css);
+@import url(./components/SearchForm/SearchForm.css);
+@import url(./components/RegisterModal/RegisterModal.css);
+@import url(./components/SavedNews/SavedNews.css);
+@import url(./components/Hero/Hero.css);
 
 * {
     box-sizing: border-box;
