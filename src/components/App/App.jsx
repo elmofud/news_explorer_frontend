@@ -15,7 +15,7 @@ import { getNewsArticles } from "../../utils/newsApi.js";
 import "./App.css";
 
 function App() {
-    const [isLoggedIn] = useState(true);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [activeModal, setActiveModal] = useState("");
 
@@ -28,13 +28,17 @@ function App() {
     const [savedArticles, setSavedArticles] = useState(mockArticles);
     const [_isBookmarked, _setIsBookmarked] = useState(false);
 
-    const [username, _setUsername] = useState("Elis");
+    const [username, setUsername] = useState("");
     const [isActive, _setIsActive] = useState(false);
 
     const handleLoginClick = () => setActiveModal("login");
     const handleRegisterClick = () => setActiveModal("signup");
     const handleSignupSuccess = () => setActiveModal("signup-success");
     const handleCloseModal = () => setActiveModal("");
+    const handleLogin = () => {
+        setIsLoggedIn(true);
+        setActiveModal("");
+    };
     const handleSearch = async (keyword) => {
         setIsSearch(true);
         setIsLoading(true);
@@ -101,6 +105,7 @@ function App() {
                     isOpen={activeModal === "login"}
                     onClose={handleCloseModal}
                     onRegisterClick={handleRegisterClick}
+                    onLogin={handleLogin}
                     buttonText="Sign in"
                 />
                 <RegisterModal
