@@ -10,7 +10,12 @@ const RegisterModal = ({
 }) => {
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        onSignupSuccess();
+        console.log("Register form submitted fired:", {
+            email,
+            password,
+            username,
+        });
+        onSignupSuccess({ email, password, username });
     };
     return (
         <ModalWithForm

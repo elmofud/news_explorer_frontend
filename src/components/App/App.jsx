@@ -33,7 +33,12 @@ function App() {
 
     const handleLoginClick = () => setActiveModal("login");
     const handleRegisterClick = () => setActiveModal("signup");
-    const handleSignupSuccess = () => setActiveModal("signup-success");
+
+    const handleSignupSuccess = ({ username }) => {
+        setUsername(username);
+        setActiveModal("signup-success");
+    };
+
     const handleCloseModal = () => setActiveModal("");
     const handleLogin = () => {
         setIsLoggedIn(true);
