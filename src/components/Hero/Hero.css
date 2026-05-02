@@ -67,5 +67,10 @@
     .hero {
         padding: 40px 16px;
         overflow: hidden;
+        height: 536px;
+    }
+
+    .hero__subtitle {
+        margin-bottom: 122px;
     }
 }

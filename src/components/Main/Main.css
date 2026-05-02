@@ -56,4 +56,9 @@
     .search-results {
         padding: 24px 16px;
     }
+
+    .search-results__button {
+        margin-top: 24px;
+        height: 56px;
+    }
 }
