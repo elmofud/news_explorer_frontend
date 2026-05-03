@@ -63,11 +63,18 @@
     }
 }
 
+@media (max-width: 768px) {
+    .hero {
+        background-image: url("../../images/bg-tablet-hero.svg");
+    }
+}
+
 @media (max-width: 320px) {
     .hero {
         padding: 40px 16px;
         overflow: hidden;
         height: 536px;
+        background-image: url("../../images/bg-mobile-hero.svg");
     }
 
     .hero__subtitle {
