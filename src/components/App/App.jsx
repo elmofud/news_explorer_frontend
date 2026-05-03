@@ -86,9 +86,9 @@ function App() {
                                     searchResults={results}
                                     isSearch={isSearch}
                                 />
-                                {!isSearch && results.length === 0 && (
-                                    <NothingFound />
-                                )}
+                                {isSearch &&
+                                    isLoading &&
+                                    results.length === 0 && <NothingFound />}
                             </>
                         }
                     />

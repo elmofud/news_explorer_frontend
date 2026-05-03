@@ -17,14 +17,19 @@ const Main = ({ searchResults, isSearch }) => {
             {isSearch && (
                 <section className="search-results">
                     <h2 className="search-results__title">Search Results</h2>
-                    <NewsCardList articles={visibleArticles} />
-                    <button
-                        className="search-results__button"
-                        type="button"
-                        onClick={handleShowMore}
-                    >
-                        Show more
-                    </button>
+                    <NewsCardList
+                        articles={visibleArticles}
+                        isSavedNews={false}
+                    />
+                    {visibleCount < searchResults.length && (
+                        <button
+                            className="search-results__button"
+                            type="button"
+                            onClick={handleShowMore}
+                        >
+                            Show more
+                        </button>
+                    )}
                 </section>
             )}
             <About />

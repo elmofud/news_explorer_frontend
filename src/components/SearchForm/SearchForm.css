@@ -46,7 +46,7 @@
 
 .search-form__button:focus-visible {
     outline: 2px solid var(--text-white);
-    outline-offset: -4 px;
+    outline-offset: -4px;
 }
 
 .search-form__button:active {
