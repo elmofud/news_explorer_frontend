@@ -92,22 +92,25 @@
 
 .navigation__hamburger {
     display: none;
-    flex-direction: colomn;
-    gap: 5px;
+    flex-direction: column;
+    justify-content: space-between;
+    /* gap: 5px; */
+    width: 24px;
+    height: 18px;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    padding: 4px;
+    padding: 0;
 }
 
-.navigation__hamburger span {
+.navigation__hamburger-line {
     display: block;
     width: 24px;
     height: 2px;
     background-color: var(--text-white);
 }
 
-.navigation_theme_dark .navigation__hamburger span {
+.navigation_theme_dark .navigation__hamburger-line {
     background-color: var(--text-primary);
 }
 
@@ -155,5 +158,14 @@
     }
     .navigation__link {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navigation__desktop {
+        display: none;
+    }
+    .mavigation__hamburger {
+        display: flex;
     }
 }
