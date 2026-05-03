@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 import "./RegisterModal.css";
 
@@ -8,15 +9,20 @@ const RegisterModal = ({
     onLoginClick,
     onSignupSuccess,
 }) => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("");
+
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log("Register form submitted fired:", {
+        console.log("Register form submitted:", {
             email,
             password,
             username,
         });
         onSignupSuccess({ email, password, username });
     };
+
     return (
         <ModalWithForm
             isOpen={isOpen}
@@ -44,6 +50,8 @@ const RegisterModal = ({
                     id="register-email"
                     placeholder="Enter email"
                     name="email"
+                    value={email}
+                    onChange={(evt) => setEmail(evt.target.value)}
                 />
             </label>
             <label htmlFor="register-password" className="modal__label">
@@ -55,6 +63,8 @@ const RegisterModal = ({
                     id="register-password"
                     placeholder="Enter password"
                     name="password"
+                    value={password}
+                    onChange={(evt) => setPassword(evt.target.value)}
                 />
             </label>
             <label htmlFor="register-username" className="modal__label">
@@ -66,6 +76,8 @@ const RegisterModal = ({
                     id="register-username"
                     placeholder="Enter your username"
                     name="username"
+                    value={username}
+                    onChange={(evt) => setUsername(evt.target.value)}
                 />
             </label>
         </ModalWithForm>

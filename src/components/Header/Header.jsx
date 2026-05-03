@@ -1,26 +1,29 @@
+import { Link } from "react-router-dom";
 import logo from "../../images/newsExplorer.svg";
 import logoBlack from "../../images/newsExplorerBlack.svg";
 import Navigation from "../Navigation/Navigation.jsx";
 import "./Header.css";
 
 function Header({ isHomePage, username, isLoggedIn, onLoginClick }) {
-  return (
-    <header
-      className={`header${isHomePage ? " header_theme_light" : " header_theme_dark"}`}
-    >
-      <img
-        className="header__logo"
-        src={isHomePage ? logo : logoBlack}
-        alt="News Explorer"
-      />
-      <Navigation
-        isHomePage={isHomePage}
-        isLoggedIn={isLoggedIn}
-        onLoginClick={onLoginClick}
-        username={username}
-      />
-    </header>
-  );
+    return (
+        <header
+            className={`header${isHomePage ? " header_theme_light" : " header_theme_dark"}`}
+        >
+            <Link to="/" className="header__logo-link">
+                <img
+                    className="header__logo"
+                    src={isHomePage ? logo : logoBlack}
+                    alt="News Explorer"
+                />
+            </Link>
+            <Navigation
+                isHomePage={isHomePage}
+                isLoggedIn={isLoggedIn}
+                onLoginClick={onLoginClick}
+                username={username}
+            />
+        </header>
+    );
 }
 
 export default Header;
