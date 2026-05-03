@@ -8,7 +8,7 @@
     padding: 0;
 }
 
-@media screen and (max-width: 320px) {
+@media (max-width: 320px) {
     .news-card-list {
         grid-template-columns: 1fr;
         padding: 0;
