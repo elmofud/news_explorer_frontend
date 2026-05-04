@@ -6,7 +6,14 @@ import closeButtonIcon from "../../images/closeButton.svg";
 import blackCloseButtonIcon from "../../images/blackCloseButton.svg";
 import "./Navigation.css";
 
-const Navigation = ({ isHomePage, isLoggedIn, username, onLoginClick }) => {
+const Navigation = ({
+    onclick,
+    isHomePage,
+    isLoggedIn,
+    username,
+    onLogout,
+    onLoginClick,
+}) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const handleMenuToggle = () => setIsMenuOpen(!isMenuOpen);
     const handleLinkClick = () => setIsMenuOpen(false);
@@ -38,6 +45,7 @@ const Navigation = ({ isHomePage, isLoggedIn, username, onLoginClick }) => {
                 {isLoggedIn ? (
                     <button
                         className={`navigation__button navigation__button_logout${isHomePage ? " navigation__button_light" : " navigation__button_dark"}`}
+                        onClick={onLogout}
                     >
                         {username}
                         <img

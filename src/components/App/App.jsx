@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect, use } from "react";
 import * as auth from "../../utils/auth.js";
 import * as api from "../../utils/api.js";
 import Header from "../Header/Header.jsx";
@@ -29,6 +29,7 @@ function App() {
     const [isSearch, setIsSearch] = useState(false);
     const [savedArticles, setSavedArticles] = useState([]);
     const [_isBookmarked, _setIsBookmarked] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const [username, setUsername] = useState("");
     const [isActive, _setIsActive] = useState(false);
@@ -49,6 +50,7 @@ function App() {
     const handleCloseModal = () => setActiveModal("");
 
     const handleLogin = ({ email, password }) => {
+        setIsSubmitting(true);
         auth.authorize({ email, password })
             .then((data) => {
                 localStorage.setItem("jwt", data.token);
@@ -59,9 +61,20 @@ function App() {
                 setIsLoggedIn(true);
                 setActiveModal("");
             })
-            .catch((err) => console.error(err));
+            .catch((err) => console.error(err))
+            .finally(() => setIsSubmitting(false));
     };
-    const handleSearch = async (keyword) => {
+
+    const handleLogout = () => {
+        localStorage.removeItem("jwt");
+        setIsLoggedIn(false);
+        setUsername("");
+        setSavedArticles([]);
+        setResults([]);
+        setIsSearch(false);
+    };
+
+    async function handleSearch(keyword) {
         setIsSearch(true);
         setIsLoading(true);
         try {
@@ -77,7 +90,7 @@ function App() {
         } finally {
             setIsLoading(false);
         }
-    };
+    }
 
     const location = useLocation();
     const isHomePage = location.pathname === "/";
@@ -103,6 +116,33 @@ function App() {
         .filter(Boolean)
         .join(", ");
 
+    useEffect(() => {
+        const token = localStorage.getItem("jwt");
+        if (!token) return;
+
+        auth.checkToken(token)
+            .then((res) => {
+                setUsername(res.data.username);
+                setIsLoggedIn(true);
+            })
+            .catch((err) => {
+                console.error("Token validation failed:", err);
+                localStorage.removeItem("jwt");
+            });
+    }, []);
+
+    useEffect(() => {
+        const token = localStorage.getItem("jwt");
+        if (!token) return;
+        api.getSavedArticles(token)
+            .then((res) => {
+                setSavedArticles(res.data);
+            })
+            .catch((err) => {
+                console.error("Failed to fetch saved articles:", err);
+            });
+    }, [isLoggedIn]);
+
     return (
         <div className="app">
             <div className="app__content">
@@ -112,6 +152,7 @@ function App() {
                     onLoginClick={handleLoginClick}
                     username={username}
                     isActive={isActive}
+                    onLogout={handleLogout}
                 />
                 <Routes>
                     <Route
@@ -152,6 +193,7 @@ function App() {
                     onRegisterClick={handleRegisterClick}
                     onLogin={handleLogin}
                     buttonText="Sign in"
+                    isSubmitting={isSubmitting}
                 />
                 <RegisterModal
                     isOpen={activeModal === "signup"}

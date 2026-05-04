@@ -8,6 +8,7 @@ const LoginModal = ({
     onClose,
     buttonText,
     onRegisterClick,
+    isSubmitting,
 }) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -25,6 +26,7 @@ const LoginModal = ({
             onClose={onClose}
             onLogin={onLogin}
             onSubmit={handleSubmit}
+            isSubmitting={isSubmitting}
             alternateButton={
                 <button
                     type="button"

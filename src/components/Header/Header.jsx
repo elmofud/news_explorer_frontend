@@ -4,7 +4,7 @@ import logoBlack from "../../images/newsExplorerBlack.svg";
 import Navigation from "../../components/Navigation/Navigation.jsx";
 import "./Header.css";
 
-function Header({ isHomePage, username, isLoggedIn, onLoginClick }) {
+function Header({ onLogout, isHomePage, username, isLoggedIn, onLoginClick }) {
     return (
         <header
             className={`header${isHomePage ? " header_theme_light" : " header_theme_dark"}`}
@@ -21,6 +21,7 @@ function Header({ isHomePage, username, isLoggedIn, onLoginClick }) {
                 isLoggedIn={isLoggedIn}
                 onLoginClick={onLoginClick}
                 username={username}
+                onLogout={onLogout}
             />
         </header>
     );
