@@ -23,6 +23,7 @@
     --bg-dark: #1a1b22;
 
     /* Border & Divider Color */
+    --border-black: #000000;
     --border-gray: #d1d2d6;
     --border-white: #ffffff;
     --border-white-opacity: rgba(255, 255, 255, 0.2);
@@ -38,6 +39,7 @@
     --shadow-button: #0e1a39;
     --black: #000000;
     --custom-shadow: 0px 5px 15px 0px #0e1a3933;
+    --custon-light-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.2) inset;
 
     /* Button States */
     --btn-blue: #2f71e5;

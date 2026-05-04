@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logoutIcon from "../../images/logout-icon.svg";
 import logoutBlackIcon from "../../images/logoutBlack-icon.svg";
+import closeButtonIcon from "../../images/closeButton.svg";
+import blackCloseButtonIcon from "../../images/blackCloseButton.svg";
 import "./Navigation.css";
 
 const Navigation = ({ isHomePage, isLoggedIn, username, onLoginClick }) => {
@@ -46,7 +48,7 @@ const Navigation = ({ isHomePage, isLoggedIn, username, onLoginClick }) => {
                     </button>
                 ) : (
                     <button
-                        className="navigation__button"
+                        className={`navigation__button ${isHomePage ? "navigation__button_light" : "navigation__button_dark"}`}
                         onClick={onLoginClick}
                     >
                         Sign In
@@ -54,54 +56,77 @@ const Navigation = ({ isHomePage, isLoggedIn, username, onLoginClick }) => {
                 )}
             </div>
             <button
-                className="navigation__hamburger"
+                className={`navigation__hamburger ${isHomePage || isMenuOpen ? "navigation__hamburger_light" : "navigation__hamburger_dark"}`}
                 onClick={handleMenuToggle}
             >
-                <span className="navigation__hamburger-line"></span>
-                <span className="navigation__hamburger-line"></span>
-                <span className="navigation__hamburger-line"></span>
+                {isMenuOpen ? (
+                    <img
+                        src={
+                            isHomePage ? closeButtonIcon : blackCloseButtonIcon
+                        }
+                        alt="Close Menu"
+                        className="navigation__close-icon"
+                    />
+                ) : (
+                    <>
+                        <span className="navigation__hamburger-line"></span>
+                        <span className="navigation__hamburger-line"></span>
+                        <span className="navigation__hamburger-line"></span>
+                    </>
+                )}
             </button>
             {isMenuOpen && (
-                <div className="navigation__mobile-menu">
-                    <NavLink
-                        to="/"
-                        className="navigation__mobile-link"
+                <>
+                    <div
+                        className="navigation__overlay"
                         onClick={handleLinkClick}
                     >
-                        Home
-                    </NavLink>
-                    {isLoggedIn && (
-                        <NavLink
-                            to="/saved-news"
-                            className="navigation__mobile-link"
-                            onClick={handleLinkClick}
-                        >
-                            Saved Articles
-                        </NavLink>
-                    )}
-                    {isLoggedIn ? (
-                        <button
-                            className={`navigation__button navigation__button_logout-icon${isHomePage ? " navigation__button_light" : " navigation__button_dark"}`}
-                        >
-                            {username}
-                            <img
-                                className="navigation__logout-icon"
-                                src={isHomePage ? logoutIcon : logoutBlackIcon}
-                                alt="Logout"
-                            />
-                        </button>
-                    ) : (
-                        <button
-                            className="navigation__button navigation__mobile-button"
-                            onClick={() => {
-                                onLoginClick();
-                                handleLinkClick();
-                            }}
-                        >
-                            Sign In
-                        </button>
-                    )}
-                </div>
+                        <div className="navigation__mobile-menu">
+                            <NavLink
+                                to="/"
+                                className="navigation__mobile-link"
+                                onClick={handleLinkClick}
+                            >
+                                Home
+                            </NavLink>
+                            {isLoggedIn && (
+                                <NavLink
+                                    to="/saved-news"
+                                    className="navigation__mobile-link"
+                                    onClick={handleLinkClick}
+                                >
+                                    Saved Articles
+                                </NavLink>
+                            )}
+                            {isLoggedIn ? (
+                                <button
+                                    className={`navigation__button navigation__button_logout-icon${isHomePage ? " navigation__button_light" : " navigation__button_dark"}`}
+                                >
+                                    {username}
+                                    <img
+                                        className="navigation__logout-icon"
+                                        src={
+                                            isHomePage
+                                                ? logoutIcon
+                                                : logoutBlackIcon
+                                        }
+                                        alt="Logout"
+                                    />
+                                </button>
+                            ) : (
+                                <button
+                                    className="navigation__button navigation__mobile-button"
+                                    onClick={() => {
+                                        onLoginClick();
+                                        handleLinkClick();
+                                    }}
+                                >
+                                    Sign In
+                                </button>
+                            )}
+                        </div>
+                    </div>
+                </>
             )}
         </nav>
     );
