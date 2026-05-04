@@ -25,9 +25,9 @@ function App() {
    results should be useState([])
    isSearch should be useState(false)  
    savedArticles should be useState([]) and populated from API */
-    const [results, setResults] = useState(mockArticles);
-    const [isSearch, setIsSearch] = useState(true);
-    const [savedArticles, setSavedArticles] = useState(mockArticles);
+    const [results, setResults] = useState([]);
+    const [isSearch, setIsSearch] = useState(false);
+    const [savedArticles, setSavedArticles] = useState([]);
     const [_isBookmarked, _setIsBookmarked] = useState(false);
 
     const [username, setUsername] = useState("");
@@ -66,7 +66,11 @@ function App() {
         setIsLoading(true);
         try {
             const articles = await getNewsArticles(keyword);
-            setResults(articles);
+            const articlesWithKeyword = articles.map((article) => ({
+                ...article,
+                keyword: keyword,
+            }));
+            setResults(articlesWithKeyword);
         } catch (error) {
             console.error("Error fetching news articles:", error);
             setResults([]);
@@ -89,9 +93,15 @@ function App() {
 
     const handleDeleteArticle = (id) => {
         setSavedArticles((prevArticles) =>
-            prevArticles.filter((article) => article.id !== id),
+            prevArticles.filter((article) => article._id !== id),
         );
     };
+
+    const savedKeywords = [
+        ...new Set(savedArticles.map((article) => article.keyword)),
+    ]
+        .filter(Boolean)
+        .join(", ");
 
     return (
         <div className="app">
@@ -127,7 +137,7 @@ function App() {
                             <SavedNews
                                 savedArticles={savedArticles}
                                 username={username}
-                                keywords="Nature, Yellowstone"
+                                keywords={savedKeywords}
                                 onDelete={handleDeleteArticle}
                                 isLoggedIn={isLoggedIn}
                             />

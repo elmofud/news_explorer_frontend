@@ -1,13 +1,19 @@
 import NewsCard from "../NewsCard/NewsCard.jsx";
 import "./NewsCardList.css";
 
-const NewsCardList = ({ articles = [], isSavedNews, onDelete, isLoggedIn }) => {
+const NewsCardList = ({
+    articles = [],
+    isSavedNews,
+    onDelete,
+    isLoggedIn,
+    onSaveArticle,
+}) => {
     return (
         <ul className="news-card-list">
             {articles.map((article) => (
                 <NewsCard
-                    key={article.id}
-                    id={article.id}
+                    key={article._id || article.id}
+                    _id={article._id}
                     title={article.title}
                     imageUrl={article.imageUrl}
                     date={article.date}
@@ -18,6 +24,7 @@ const NewsCardList = ({ articles = [], isSavedNews, onDelete, isLoggedIn }) => {
                     onDelete={onDelete}
                     isSavedNews={isSavedNews}
                     isLoggedIn={isLoggedIn}
+                    onSaveArticle={onSaveArticle}
                 />
             ))}
         </ul>

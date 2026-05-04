@@ -9,6 +9,7 @@ const NewsCard = ({
     keyword,
     source,
     id,
+    _id,
     isSavedNews = false,
     onDelete,
     isLoggedIn,
@@ -19,14 +20,31 @@ const NewsCard = ({
 
     const handleDelete = () => {
         if (onDelete) {
-            onDelete(id);
+            onDelete(_id);
         }
     };
 
     const handleBookmark = () => {
+        console.log("Bookmark clicked for article:", {
+            imageUrl,
+            date,
+            title,
+            info,
+            keyword,
+            source,
+        });
         setIsBookmarked(!isBookmarked);
         if (!isBookmarked && onSaveArticle) {
-            onSaveArticle({ imageUrl, date, title, info, keyword, source });
+            onSaveArticle({
+                imageUrl,
+                date,
+                title,
+                info,
+                keyword,
+                source,
+                id,
+                onSaveArticle,
+            });
         }
     };
 
