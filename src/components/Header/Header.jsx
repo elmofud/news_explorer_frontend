@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../../images/newsExplorer.svg";
 import logoBlack from "../../images/newsExplorerBlack.svg";
-import Navigation from "../Navigation/Navigation.jsx";
+import Navigation from "../../components/Navigation/Navigation.jsx";
 import "./Header.css";
 
 function Header({ isHomePage, username, isLoggedIn, onLoginClick }) {

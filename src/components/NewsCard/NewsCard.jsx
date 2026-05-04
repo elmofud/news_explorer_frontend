@@ -11,6 +11,7 @@ const NewsCard = ({
     id,
     isSavedNews = false,
     onDelete,
+    isLoggedIn,
 }) => {
     const [isBookmarked, setIsBookmarked] = useState(false);
     const bookmarkButtonClassName = `news-card__bookmark-button ${isBookmarked ? "news-card__bookmark-button_active" : ""}`;
@@ -27,10 +28,10 @@ const NewsCard = ({
 
     return (
         <li className="news-card">
-            {isSavedNews && (
+            {isSavedNews && isLoggedIn && (
                 <span className="news-card__keyword">{keyword}</span>
             )}
-            {isSavedNews ? (
+            {isSavedNews && isLoggedIn ? (
                 <button
                     className="news-card__delete-button"
                     type="button"

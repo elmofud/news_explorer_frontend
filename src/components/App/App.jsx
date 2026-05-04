@@ -85,6 +85,7 @@ function App() {
                                 <Main
                                     searchResults={results}
                                     isSearch={isSearch}
+                                    isLoggedIn={isLoggedIn}
                                 />
                                 {isSearch &&
                                     isLoading &&

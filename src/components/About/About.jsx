@@ -1,4 +1,4 @@
-import avatar from "../../images/author-avatar.svg";
+import avatar from "../../images/avatar-author.jpg";
 
 import "./About.css";
 
