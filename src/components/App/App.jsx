@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import React, { useState } from "react";
+import * as auth from "../../utils/auth.js";
 import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 import Hero from "../Hero/Hero.jsx";
@@ -34,15 +35,30 @@ function App() {
     const handleLoginClick = () => setActiveModal("login");
     const handleRegisterClick = () => setActiveModal("signup");
 
-    const handleSignupSuccess = ({ username }) => {
-        setUsername(username);
-        setActiveModal("signup-success");
+    const handleSignupSuccess = ({ email, password, username }) => {
+        auth.register({ email: email, password, username })
+            .then((res) => {
+                console.log("Registration successful:", res);
+                setUsername(username);
+                setActiveModal("signup-success");
+            })
+            .catch((err) => console.error("Registration failed:", err));
     };
 
     const handleCloseModal = () => setActiveModal("");
-    const handleLogin = () => {
-        setIsLoggedIn(true);
-        setActiveModal("");
+
+    const handleLogin = ({ email, password }) => {
+        auth.authorize({ email, password })
+            .then((data) => {
+                localStorage.setItem("jwt", data.token);
+                return auth.checkToken(data.token);
+            })
+            .then((res) => {
+                setUsername(res.data.username);
+                setIsLoggedIn(true);
+                setActiveModal("");
+            })
+            .catch((err) => console.error(err));
     };
     const handleSearch = async (keyword) => {
         setIsSearch(true);

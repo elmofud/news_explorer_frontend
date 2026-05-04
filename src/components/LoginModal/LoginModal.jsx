@@ -1,3 +1,4 @@
+import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 import "./LoginModal.css";
 
@@ -8,9 +9,12 @@ const LoginModal = ({
     buttonText,
     onRegisterClick,
 }) => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        onLogin();
+        onLogin({ email, password });
     };
 
     return (
@@ -40,6 +44,8 @@ const LoginModal = ({
                     id="login-email"
                     placeholder="Enter email"
                     name="email"
+                    value={email}
+                    onChange={(evt) => setEmail(evt.target.value)}
                 />
             </label>
             <label htmlFor="login-password" className="modal__label">
@@ -51,6 +57,8 @@ const LoginModal = ({
                     id="login-password"
                     placeholder="Enter password"
                     name="password"
+                    value={password}
+                    onChange={(evt) => setPassword(evt.target.value)}
                 />
             </label>
         </ModalWithForm>
