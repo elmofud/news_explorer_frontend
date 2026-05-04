@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import React, { useState } from "react";
 import * as auth from "../../utils/auth.js";
+import * as api from "../../utils/api.js";
 import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 import Hero from "../Hero/Hero.jsx";
@@ -76,6 +77,16 @@ function App() {
 
     const location = useLocation();
     const isHomePage = location.pathname === "/";
+
+    const handleSaveArticle = (article) => {
+        const token = localStorage.getItem("jwt");
+        api.saveArticle(article, token)
+            .then((res) => {
+                setSavedArticles((prev) => [res.data, ...prev]);
+            })
+            .catch((err) => console.error(err));
+    };
+
     const handleDeleteArticle = (id) => {
         setSavedArticles((prevArticles) =>
             prevArticles.filter((article) => article.id !== id),
@@ -102,6 +113,7 @@ function App() {
                                     searchResults={results}
                                     isSearch={isSearch}
                                     isLoggedIn={isLoggedIn}
+                                    onSaveArticle={handleSaveArticle}
                                 />
                                 {isSearch &&
                                     isLoading &&
@@ -117,6 +129,7 @@ function App() {
                                 username={username}
                                 keywords="Nature, Yellowstone"
                                 onDelete={handleDeleteArticle}
+                                isLoggedIn={isLoggedIn}
                             />
                         }
                     />

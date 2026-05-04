@@ -3,7 +3,7 @@ import About from "../About/About.jsx";
 import NewsCardList from "../NewsCardList/NewsCardList.jsx";
 import "./Main.css";
 
-const Main = ({ searchResults, isSearch, isLoggedIn }) => {
+const Main = ({ searchResults, isSearch, isLoggedIn, onSaveArticle }) => {
     const [visibleCount, setVisibleCount] = useState(3);
 
     const handleShowMore = () => {
@@ -21,6 +21,7 @@ const Main = ({ searchResults, isSearch, isLoggedIn }) => {
                         articles={visibleArticles}
                         isSavedNews={false}
                         isLoggedIn={isLoggedIn}
+                        onSaveArticle={onSaveArticle}
                     />
                     {visibleCount < searchResults.length && (
                         <button

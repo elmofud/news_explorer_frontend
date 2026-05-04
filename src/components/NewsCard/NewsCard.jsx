@@ -12,6 +12,7 @@ const NewsCard = ({
     isSavedNews = false,
     onDelete,
     isLoggedIn,
+    onSaveArticle,
 }) => {
     const [isBookmarked, setIsBookmarked] = useState(false);
     const bookmarkButtonClassName = `news-card__bookmark-button ${isBookmarked ? "news-card__bookmark-button_active" : ""}`;
@@ -24,6 +25,9 @@ const NewsCard = ({
 
     const handleBookmark = () => {
         setIsBookmarked(!isBookmarked);
+        if (!isBookmarked && onSaveArticle) {
+            onSaveArticle({ imageUrl, date, title, info, keyword, source });
+        }
     };
 
     return (
