@@ -132,3 +132,30 @@ modal__submit:focus-visible {
     outline: 2px solid var(--primary-blue);
     outline-offset: 2px;
 }
+
+@media (max-width: 480px) {
+    .modal__container {
+        min-width: unset;
+        width: calc(100%-32px);
+        max-width: 360px;
+        padding: 16px;
+    }
+
+    .modal__close-button {
+        top: 16px;
+        right: 16px;
+    }
+    .modal__close-button-image {
+        height: 24px;
+        width: 24px;
+    }
+
+    .modal__title {
+        font-size: 20px;
+        padding-right: 32px;
+    }
+
+    .modal__submit {
+        width: 100%;
+    }
+}
