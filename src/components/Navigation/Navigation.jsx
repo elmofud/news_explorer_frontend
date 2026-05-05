@@ -7,17 +7,18 @@ import blackCloseButtonIcon from "../../images/blackCloseButton.svg";
 import "./Navigation.css";
 
 const Navigation = ({
-    onclick,
     isHomePage,
     isLoggedIn,
     username,
     onLogout,
     onLoginClick,
+    onCloseModal,
+    activeModal,
 }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const handleMenuToggle = () => setIsMenuOpen(!isMenuOpen);
     const handleLinkClick = () => setIsMenuOpen(false);
-
+    const isModalOpen = Boolean(activeModal);
     return (
         <nav
             className={`navigation${isHomePage ? " navigation_theme_light" : " navigation_theme_dark"} `}
@@ -64,10 +65,10 @@ const Navigation = ({
                 )}
             </div>
             <button
-                className={`navigation__hamburger ${isHomePage || isMenuOpen ? "navigation__hamburger_light" : "navigation__hamburger_dark"}`}
-                onClick={handleMenuToggle}
+                className={`navigation__hamburger ${isHomePage || isMenuOpen || isModalOpen ? "navigation__hamburger_light" : "navigation__hamburger_dark"}`}
+                onClick={isModalOpen ? onCloseModal : handleMenuToggle}
             >
-                {isMenuOpen ? (
+                {isMenuOpen || isModalOpen ? (
                     <img
                         src={
                             isHomePage ? closeButtonIcon : blackCloseButtonIcon

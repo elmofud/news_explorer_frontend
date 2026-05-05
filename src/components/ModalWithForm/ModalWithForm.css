@@ -133,15 +133,19 @@ modal__submit:focus-visible {
     outline-offset: 2px;
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 630px) {
     .modal__container {
+        position: absolute;
+        top: 56px;
         min-width: unset;
-        width: calc(100%-32px);
+        width: 100%;
+        border-radius: 0;
         max-width: 360px;
-        padding: 16px;
+        padding: 56px 16px 16px 16px;
     }
 
     .modal__close-button {
+        position: absolute;
         top: 16px;
         right: 16px;
     }
@@ -151,7 +155,7 @@ modal__submit:focus-visible {
     }
 
     .modal__title {
-        font-size: 20px;
+        font-size: 24px;
         padding-right: 32px;
     }
 

@@ -4,7 +4,15 @@ import logoBlack from "../../images/newsExplorerBlack.svg";
 import Navigation from "../../components/Navigation/Navigation.jsx";
 import "./Header.css";
 
-function Header({ onLogout, isHomePage, username, isLoggedIn, onLoginClick }) {
+function Header({
+    activeModal,
+    onLogout,
+    isHomePage,
+    username,
+    isLoggedIn,
+    onLoginClick,
+    onCloseModal,
+}) {
     return (
         <header
             className={`header${isHomePage ? " header_theme_light" : " header_theme_dark"}`}
@@ -22,6 +30,8 @@ function Header({ onLogout, isHomePage, username, isLoggedIn, onLoginClick }) {
                 onLoginClick={onLoginClick}
                 username={username}
                 onLogout={onLogout}
+                activeModal={activeModal}
+                onCloseModal={onCloseModal}
             />
         </header>
     );

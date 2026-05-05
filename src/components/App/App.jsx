@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from "react-router-dom";
-import React, { useState, useEffect, use } from "react";
+import React, { useState, useEffect } from "react";
 import * as auth from "../../utils/auth.js";
 import * as api from "../../utils/api.js";
 import Header from "../Header/Header.jsx";
@@ -155,6 +155,8 @@ function App() {
                     username={username}
                     isActive={isActive}
                     onLogout={handleLogout}
+                    activeModal={activeModal}
+                    onCloseModal={handleCloseModal}
                 />
                 <Routes>
                     <Route
