@@ -8,9 +8,8 @@
     padding: 0;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 630px) {
     .news-card-list {
         grid-template-columns: 1fr;
-        padding: 0;
     }
 }

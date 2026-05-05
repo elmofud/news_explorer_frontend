@@ -133,7 +133,7 @@ modal__submit:focus-visible {
     outline-offset: 2px;
 }
 
-@media screen and (max-width: 630px) {
+@media (max-width: 630px) {
     .modal__container {
         position: absolute;
         top: 56px;

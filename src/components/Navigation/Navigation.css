@@ -132,7 +132,7 @@
 }
 
 .navigation__mobile-menu {
-    position: absolute;
+    position: fixed;
     top: 56px;
     left: 0;
     right: 0;
@@ -186,12 +186,18 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 630px) {
     .navigation__desktop {
         display: none;
     }
     .navigation__hamburger {
         display: flex;
+    }
+
+    .navigation__mobile-button {
+        height: 56px;
+        width: 100%;
+        justify-content: center;
     }
 
     .navigation__button.navigation__button_logout-icon.navigation__button_light {

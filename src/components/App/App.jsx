@@ -112,11 +112,20 @@ function App() {
         );
     };
 
-    const savedKeywords = [
+    const uniqueKeywords = [
         ...new Set(savedArticles.map((article) => article.keyword)),
-    ]
-        .filter(Boolean)
-        .join(", ");
+    ].filter(Boolean);
+
+    let savedKeywords = "";
+    if (uniqueKeywords.length === 1) {
+        savedKeywords = uniqueKeywords[0];
+    } else if (uniqueKeywords.length === 2) {
+        savedKeywords = `${uniqueKeywords[0]}, ${uniqueKeywords[1]}`;
+    } else if (uniqueKeywords.length === 3) {
+        savedKeywords = `${uniqueKeywords[0]}, ${uniqueKeywords[1]}, and ${uniqueKeywords[2]}`;
+    } else if (uniqueKeywords.length > 3) {
+        savedKeywords = `${uniqueKeywords[0]}, ${uniqueKeywords[1]}, and ${uniqueKeywords.length - 2} other`;
+    }
 
     useEffect(() => {
         const token = localStorage.getItem("jwt");
