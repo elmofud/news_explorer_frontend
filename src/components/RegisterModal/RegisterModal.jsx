@@ -7,6 +7,7 @@ const RegisterModal = ({
     onClose,
     buttonText,
     onLoginClick,
+    isSubmitting,
     onSignupSuccess,
 }) => {
     const [email, setEmail] = useState("");
@@ -26,10 +27,11 @@ const RegisterModal = ({
     return (
         <ModalWithForm
             isOpen={isOpen}
-            title="Sign up"
+            title="Signing up..."
             onClose={onClose}
             onSubmit={handleSubmit}
             buttonText={buttonText}
+            isSubmitting={isSubmitting}
             alternateButton={
                 <button
                     type="button"

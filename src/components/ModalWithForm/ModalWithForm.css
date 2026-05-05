@@ -96,6 +96,11 @@
     cursor: pointer;
 }
 
+.modal__submit:disabled {
+    background-color: var(--btn-disabled);
+    color: var(--text-secondary);
+}
+
 .modal__alternate-button {
     border: none;
     background-color: transparent;

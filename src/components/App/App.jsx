@@ -38,13 +38,15 @@ function App() {
     const handleRegisterClick = () => setActiveModal("signup");
 
     const handleSignupSuccess = ({ email, password, username }) => {
+        setIsSubmitting(true);
         auth.register({ email: email, password, username })
             .then((res) => {
                 console.log("Registration successful:", res);
                 setUsername(username);
                 setActiveModal("signup-success");
             })
-            .catch((err) => console.error("Registration failed:", err));
+            .catch((err) => console.error("Registration failed:", err))
+            .finally(() => setIsSubmitting(false));
     };
 
     const handleCloseModal = () => setActiveModal("");
@@ -201,6 +203,7 @@ function App() {
                     onLoginClick={handleLoginClick}
                     onSignupSuccess={handleSignupSuccess}
                     buttonText="Sign up"
+                    isSubmitting={isSubmitting}
                 />
                 <SignupSuccessModal
                     isOpen={activeModal === "signup-success"}
