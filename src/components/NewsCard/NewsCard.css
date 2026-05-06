@@ -158,9 +158,17 @@
 .tooltip {
     display: inline-block;
 }
-
-/* @media (max-width: 768px) {
+@media (max-width: 1023px) {
+    .news-card__title {
+        font-size: 22px;
+        line-height: 1.2;
+    }
+    .news-card__text {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
     .news-card__container {
         padding: 16px 15px;
     }
-} */
+}

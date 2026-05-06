@@ -139,7 +139,6 @@ modal__submit:focus-visible {
         top: 56px;
         min-width: unset;
         width: 100%;
-        border-radius: 0;
         max-width: 360px;
         padding: 56px 16px 16px 16px;
     }
@@ -149,6 +148,43 @@ modal__submit:focus-visible {
         top: 16px;
         right: 16px;
     }
+    .modal__close-button-image {
+        height: 24px;
+        width: 24px;
+    }
+
+    .modal__title {
+        font-size: 24px;
+        padding-right: 32px;
+    }
+
+    .modal__submit {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .modal {
+        align-items: flex-start;
+    }
+
+    .modal__container {
+        position: relative;
+        min-width: unset;
+        width: 100%;
+        max-width: 100%;
+        height: calc(100vh - 56px);
+        margin-top: 56px;
+        border-radius: 16px 16px 0 0;
+        padding: 56px 16px 16px 16px;
+    }
+
+    .modal__close-button {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+
     .modal__close-button-image {
         height: 24px;
         width: 24px;

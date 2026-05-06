@@ -26,7 +26,7 @@ const LoginModal = ({
             onClose={onClose}
             onLogin={onLogin}
             onSubmit={handleSubmit}
-            isSubmitting={isSubmitting}
+            isSubmitting={isSubmitting || !email || !password}
             alternateButton={
                 <button
                     type="button"

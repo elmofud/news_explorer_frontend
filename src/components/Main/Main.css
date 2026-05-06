@@ -39,7 +39,7 @@
 
 .search-results__button:focus-visible {
     outline: 2px solid var(--text-white);
-    outline-offset: -4 px;
+    outline-offset: -4px;
 }
 
 @media (max-width: 768px) {
@@ -52,7 +52,7 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 500px) {
     .search-results {
         padding: 24px 16px;
     }

@@ -70,7 +70,7 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 500px) {
     .hero {
         padding: 40px 16px;
         overflow: hidden;

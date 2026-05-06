@@ -31,7 +31,7 @@ const RegisterModal = ({
             onClose={onClose}
             onSubmit={handleSubmit}
             buttonText={buttonText}
-            isSubmitting={isSubmitting}
+            isSubmitting={isSubmitting || !email || !password || !username}
             alternateButton={
                 <button
                     type="button"

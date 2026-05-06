@@ -57,7 +57,7 @@
     background-color: var(--btn-blue-active);
 }
 
-@media (max-width: 320px) {
+@media (max-width: 500px) {
     .search-form {
         flex-direction: column;
         height: auto;

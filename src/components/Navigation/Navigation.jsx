@@ -120,6 +120,7 @@ const Navigation = ({
                                                 : logoutBlackIcon
                                         }
                                         alt="Logout"
+                                        onClick={onLogout}
                                     />
                                 </button>
                             ) : (
