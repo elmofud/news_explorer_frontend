@@ -18,7 +18,7 @@ const SearchForm = ({ onSearch }) => {
                 required
                 className="search-form__input"
                 type="text"
-                placeholder="Text not entered"
+                placeholder="Enter topic"
                 value={query}
                 onChange={handleChange}
             />
