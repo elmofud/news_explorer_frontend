@@ -26,7 +26,7 @@ This repository contains the **Stage 1 frontend**. Authentication and article pe
 
 ## Live Demo
 
-[Add deployment URL here]
+[promotion video](https://drive.google.com/uc?id=1JxLSrq4r20btVjYJVcV3zsnJOvZAL0rB&export=download)
 
 ## Technologies
 

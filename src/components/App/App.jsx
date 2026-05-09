@@ -9,7 +9,6 @@ import Preloader from "../Preloader/Preloader.jsx";
 import SavedNews from "../SavedNews/SavedNews.jsx";
 import Main from "../Main/Main.jsx";
 import mockArticles from "../../utils/mockData.js";
-import NothingFound from "../NothingFound/NothingFound.jsx";
 import RegisterModal from "../RegisterModal/RegisterModal.jsx";
 import SignupSuccessModal from "../SignupSuccessModal/SignupSuccessModal.jsx";
 import LoginModal from "../LoginModal/LoginModal.jsx";
@@ -176,12 +175,10 @@ function App() {
                                 <Main
                                     searchResults={results}
                                     isSearch={isSearch}
+                                    isLoading={isLoading}
                                     isLoggedIn={isLoggedIn}
                                     onSaveArticle={handleSaveArticle}
                                 />
-                                {isSearch &&
-                                    isLoading &&
-                                    results.length === 0 && <NothingFound />}
                             </>
                         }
                     />

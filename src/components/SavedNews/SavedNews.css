@@ -50,16 +50,16 @@
     .saved-news__head-container {
         padding: 0 40px;
     }
-    .saved-news-card-list {
+    .saved-news .news-card-list {
         padding: 40px 40px 80px;
     }
 }
 
-@media (max-width: 500x) {
+@media (max-width: 500px) {
     .saved-news__head-container {
         padding: 0 16px;
     }
-    .saved-news-card-list {
+    .saved-news .news-card-list {
         padding: 24px 16px 80px;
     }
 }

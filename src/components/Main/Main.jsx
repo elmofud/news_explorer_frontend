@@ -2,8 +2,15 @@ import { useState } from "react";
 import About from "../About/About.jsx";
 import NewsCardList from "../NewsCardList/NewsCardList.jsx";
 import "./Main.css";
+import NothingFound from "../NothingFound/NothingFound.jsx";
 
-const Main = ({ searchResults, isSearch, isLoggedIn, onSaveArticle }) => {
+const Main = ({
+    searchResults,
+    isSearch,
+    isLoggedIn,
+    onSaveArticle,
+    isLoading,
+}) => {
     const [visibleCount, setVisibleCount] = useState(3);
 
     const handleShowMore = () => {
@@ -14,7 +21,7 @@ const Main = ({ searchResults, isSearch, isLoggedIn, onSaveArticle }) => {
 
     return (
         <div className="main">
-            {isSearch && (
+            {isSearch && searchResults.length > 0 && (
                 <section className="search-results">
                     <h2 className="search-results__title">Search Results</h2>
                     <NewsCardList
@@ -33,6 +40,9 @@ const Main = ({ searchResults, isSearch, isLoggedIn, onSaveArticle }) => {
                         </button>
                     )}
                 </section>
+            )}
+            {isSearch && !isLoading && searchResults.length === 0 && (
+                <NothingFound />
             )}
             <About />
         </div>
