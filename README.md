@@ -137,7 +137,8 @@ The application is fully responsive and supports the following breakpoints:
 
 ## Deployment
 
-The frontend is deployed to GitHub Pages.
+The frontend is deployed to GitHub Pages:
+https://github.com/elmofud/news_explorer_frontend
 
 ## Future Plans (Stage 2 & 3)
 
