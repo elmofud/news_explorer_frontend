@@ -26,7 +26,12 @@ This repository contains the **Stage 1 frontend**. Authentication and article pe
 
 ## Live Demo
 
-[promotion video](https://drive.google.com/uc?id=1JxLSrq4r20btVjYJVcV3zsnJOvZAL0rB&export=download)
+- **Deployed application:** https://elmofud.github.io/news_explorer_frontend/
+- **Project pitch video:** [Watch on Google Drive](https://drive.google.com/uc?id=1JxLSrq4r20btVjYJVcV3zsnJOvZAL0rB&export=download)
+
+## Project Pitch Video
+
+Check out [this video](https://drive.google.com/uc?id=1JxLSrq4r20btVjYJVcV3zsnJOvZAL0rB&export=download), where I describe my project and some challenges I faced while building it.
 
 ## Technologies
 
@@ -138,7 +143,12 @@ The application is fully responsive and supports the following breakpoints:
 ## Deployment
 
 The frontend is deployed to GitHub Pages:
-https://github.com/elmofud/news_explorer_frontend
+https://elmofud.github.io/news_explorer_frontend/
+
+**Note on the live demo:** NewsAPI's free tier only allows requests from localhost,
+so the deployed site falls back to mock article data when a search is performed.
+To see live News API results, clone the repo and run `npm run dev` locally with
+your own API key in `.env`.
 
 ## Future Plans (Stage 2 & 3)
 
