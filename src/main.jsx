@@ -5,9 +5,9 @@ import "./index.css";
 import App from "./components/App/App.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>,
+    <StrictMode>
+        <BrowserRouter basename="/news_explorer_frontend">
+            <App />
+        </BrowserRouter>
+    </StrictMode>,
 );
